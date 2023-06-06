@@ -35,7 +35,7 @@ $routes->get('pengajuan', 'Pengajuan::index');
 $routes->post('pengajuan/(:segment)', 'Pengajuan::save');
 $routes->get('lacak', 'Lacak::index');
 $routes->get('lacak/cari', 'Lacak::cari');
-$routes->get('dashboard', 'Dashboard::index');
+$routes->get('dashboard', 'Dashboard::mahasiswa');
 
 /*
  * --------------------------------------------------------------------

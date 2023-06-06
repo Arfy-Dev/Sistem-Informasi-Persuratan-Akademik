@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <div class="card card-body text-center glassmorphism">
                             <h1 class="card-title text-dark m-5" style="font-size:4rem"><img class="col-md-6" src="">
                             </h1>
-                            <h4 class="card-title font-weight-bolder">Surat Keterangan Tidak Menerima Beasiswa</h4>
+                            <h4 class="card-title font-weight-bolder">Surat Keterangan Bebas Beasiswa</h4>
                             <p class="card-text font-weight-bolder">
                                 Bukti Kebutuhan dan Potensi untuk Meraih Bantuan Pendidikan yang Layak!
                             </p>
