@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\MahasiswaModel;
+use App\Models\OrangTuaModel;
 
 class Dashboard extends BaseController
 {
@@ -9,6 +10,7 @@ class Dashboard extends BaseController
 
    public function __construct(){
     $this->mahasiswaModel = new MahasiswaModel();
+    $this->orangtuaModel = new OrangTuaModel();
 
    }
 
@@ -31,5 +33,16 @@ class Dashboard extends BaseController
         ];
 
         return view('dashboard/mahasiswa', $data);
+    }
+    public function orangtua(){
+
+        $result = $this->orangtuaModel->getAllOrangTua();
+        
+        $data = [
+            'title' => 'Data Orang Tua',
+            'data_orang_tua' => $result
+        ];
+
+        return view('dashboard/orangtua', $data);
     }
 }
