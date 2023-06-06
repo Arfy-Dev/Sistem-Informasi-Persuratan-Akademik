@@ -26,7 +26,7 @@ class Dashboard extends BaseController
         $result = $this->mahasiswaModel->getAllMahasiswa();
         
         $data = [
-            'title' => 'Data Mahasiswa',
+            'title' => 'Data Pegawai',
             'data_mahasiswa' => $result
         ];
 
