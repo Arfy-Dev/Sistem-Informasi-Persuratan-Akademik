@@ -5,7 +5,7 @@
     <div class="white_box mb_30 " style="position: relative;">
         <div class="box_header border_bottom_1px  ">
             <div class="main-title">
-                <h3 class="mb_25">Data Mahasiswa</h3>
+                <h3 class="mb_25">Data Pegawai</h3>
             </div>
         </div>
 
