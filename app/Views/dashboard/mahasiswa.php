@@ -34,8 +34,8 @@
                         <td><?= $result['alamat_mhs']?></td>
                         <td><?= $result['semester']?></td>
                         <td><?= $result['id_prodi']?></td>
-                        <td><button type="button" class="btn text-white"
-                                style="background:#f66903;font-size: 12px; padding: 5px 10px;" data-toggle="modal"
+                        <td><button type="button" class="btn btn-warning"
+                                style="font-size: 12px; color:white; padding: 5px 10px;" data-toggle="modal"
                                 data-target="#editModal<?= $result['nim']?>">
                                 Edit
                             </button>
