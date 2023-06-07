@@ -1,5 +1,6 @@
 <?= $this->extend('layout/interface_admin');?>
 <?= $this->section('content');?>
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 
 <div class="col-lg-12 col-xl-12">
     <div class="white_box mb_30 " style="position: relative;">
@@ -20,9 +21,10 @@
                         <th>Alamat</th>
                         <th>Semester</th>
                         <th>ID Prodi</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
-                <tfoot>
+                <!-- <tfoot>
                     <tr>
                         <th>NIM</th>
                         <th>Nama</th>
@@ -32,7 +34,7 @@
                         <th>Semester</th>
                         <th>ID Prodi</th>
                     </tr>
-                </tfoot>
+                </tfoot> -->
                 <tbody>
                     <?php foreach($data_mahasiswa as $result):?>
                     <tr>
@@ -43,6 +45,8 @@
                         <td><?= $result['alamat_mhs']?></td>
                         <td><?= $result['semester']?></td>
                         <td><?= $result['id_prodi']?></td>
+                        <td><a href="/mahasiswa<?= $result['nim']?>">Edit</a> <a
+                                href="/mahasiswa/delete/<?= $result['nim']?>">Hapus</a></td>
                     </tr>
                     <?php endforeach?>
                 </tbody>

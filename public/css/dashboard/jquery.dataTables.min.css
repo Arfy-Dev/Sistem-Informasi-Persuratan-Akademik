@@ -61,7 +61,7 @@ table.dataTable tbody th,
 table.dataTable tbody td {
   padding: 16px 25px;
   font-size: 12px;
-  color: #888;
+  color: b;
   font-weight: 300;
 }
 table.dataTable.row-border tbody th,

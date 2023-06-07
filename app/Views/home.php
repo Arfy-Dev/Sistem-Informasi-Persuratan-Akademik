@@ -89,5 +89,7 @@
 <script src="/js/slide.js"></script>
 <script src="/js/prism.js"></script>
 <script src="/js/register.js"></script>
+<script src="/js/modal.js"></script>
+
 
 <?= $this->endSection();?>

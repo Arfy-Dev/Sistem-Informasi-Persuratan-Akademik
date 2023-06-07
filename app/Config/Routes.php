@@ -29,6 +29,7 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
 $routes->get('/', 'Home::index');
 $routes->get('pengajuan', 'Pengajuan::index');
 // $routes->get('/ajukan', 'Pengajuan::create');
@@ -41,6 +42,8 @@ $routes->get('dashboard', 'Dashboard::index');
 $routes->get('mahasiswa', 'Dashboard::mahasiswa');
 $routes->get('orangtua', 'Dashboard::orangtua');
 
+// Penghapusan data 
+$routes->get('mahasiswa/delete/(:segment)', 'Mahasiswa::delete/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
