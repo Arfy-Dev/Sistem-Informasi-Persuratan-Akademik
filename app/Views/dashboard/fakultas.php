@@ -35,7 +35,7 @@
                                 event.preventDefault();
                                 Swal.fire({
                                     title: 'Hapus',
-                                    text: 'Apakah Anda yakin ingin menghapus data <?= $result['nim']?>?',
+                                    text: 'Apakah Anda yakin ingin menghapus data <?= $result['id_fakultas']?>?',
                                     icon: 'warning',
                                     showCancelButton: true,
                                     confirmButtonText: 'Ya',
