@@ -45,8 +45,29 @@
                         <td><?= $result['alamat_mhs']?></td>
                         <td><?= $result['semester']?></td>
                         <td><?= $result['id_prodi']?></td>
-                        <td><a href="/mahasiswa<?= $result['nim']?>">Edit</a> <a
-                                href="/mahasiswa/delete/<?= $result['nim']?>">Hapus</a></td>
+                        <td><a href="/mahasiswa/edit/<?= $result['nim']?>">Edit</a>
+                            <a href="/mahasiswa/delete/<?= $result['nim']?>"
+                                onclick="sweetAlert(event, '<?= $result['nim']?>')">Hapus</a>
+                            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                            <script>
+                            function sweetAlert(event, nim) {
+                                event.preventDefault();
+                                Swal.fire({
+                                    title: 'Hapus',
+                                    text: 'Apakah Anda yakin ingin menghapus data <?= $result['nim']?>?',
+                                    icon: 'warning',
+                                    showCancelButton: true,
+                                    confirmButtonText: 'Ya',
+                                    cancelButtonText: 'Tidak',
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        // Arahkan pengguna ke halaman delete
+                                        window.location.href = "/mahasiswa/delete/" + nim;
+                                    }
+                                });
+                            }
+                            </script>
+                        </td>
                     </tr>
                     <?php endforeach?>
                 </tbody>

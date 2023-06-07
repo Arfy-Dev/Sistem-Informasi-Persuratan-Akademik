@@ -2,10 +2,8 @@
 
 namespace App\Controllers;
 
-use CodeIgniter\Exceptions\PageNotFoundException;
 use App\Controllers\BaseController;
 use App\Models\MahasiswaModel;
-
 
 class Mahasiswa extends BaseController{
 
@@ -15,6 +13,8 @@ class Mahasiswa extends BaseController{
        $this->mahasiswaModel = new MahasiswaModel();
     }
     
+    
+   // Menampilkan view tabel mahasiswa  
     public function index(){
         
         $data = [
@@ -24,8 +24,10 @@ class Mahasiswa extends BaseController{
         return view('mahasiswa', $data);
     }
 
+   //  Menghapus data mahasiswa berdasarkan nim
     public function delete($id){
        $result = $this->mahasiswaModel->delete($id);
+
  
        if ($result) {
           session()->setFlashdata([
@@ -39,7 +41,7 @@ class Mahasiswa extends BaseController{
           'msg' => 'Gagal menghapus data',
           'error' => true
        ]);
-       return redirect()->to('/');
+       return redirect()->to('mahasiswa');
     }
 
     

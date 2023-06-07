@@ -47,7 +47,7 @@
                 <span>Data Master</span>
             </li>
             <li class="">
-                <a class="has-arrow" href="#" aria-expanded="false">
+                <a class="has-arrow" href="/mahasiswa" aria-expanded="false">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Mahasiswa</span>
                 </a>
@@ -56,7 +56,7 @@
                 </ul>
             </li>
             <li class="">
-                <a class="has-arrow" href="#" aria-expanded="false">
+                <a class="has-arrow" href="orangtua" aria-expanded="false">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Orang Tua</span>
                 </a>
@@ -65,7 +65,7 @@
                 </ul>
             </li>
             <li class="">
-                <a class="has-arrow" href="#" aria-expanded="false">
+                <a class="has-arrow" href="program_studi" aria-expanded=" false">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Program Studi</span>
                 </a>
@@ -74,7 +74,7 @@
                 </ul>
             </li>
             <li class="">
-                <a class="has-arrow" href="#" aria-expanded="false">
+                <a class="has-arrow" href="fakultas" aria-expanded="false">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Fakultas</span>
                 </a>
@@ -83,7 +83,7 @@
                 </ul>
             </li>
             <li class="">
-                <a class="has-arrow" href="#" aria-expanded="false">
+                <a class="has-arrow" href="jenis_surat" aria-expanded="false">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Jenis Surat</span>
                 </a>
@@ -96,7 +96,7 @@
                 <span>Pengajuan</span>
             </li>
             <li class="">
-                <a class="has-arrow" href="#" aria-expanded="false">
+                <a class="has-arrow" href="pengajuan_surat" aria-expanded="false">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Pengajuan Surat</span>
                 </a>
@@ -108,7 +108,7 @@
                 <span>Arsip Surat</span>
             </li>
             <li class="">
-                <a class="has-arrow" href="#" aria-expanded="false">
+                <a class="has-arrow" href="surat" aria-expanded="false">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Surat</span>
                 </a>
@@ -120,7 +120,7 @@
                 <span>Manajemen Pengguna</span>
             </li>
             <li class="">
-                <a class="has-arrow" href="#" aria-expanded="false">
+                <a class="has-arrow" href="pengguna" aria-expanded="false">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Pengguna</span>
                 </a>
