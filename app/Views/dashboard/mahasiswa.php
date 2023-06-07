@@ -34,10 +34,7 @@
                         <td><?= $result['alamat_mhs']?></td>
                         <td><?= $result['semester']?></td>
                         <td><?= $result['id_prodi']?></td>
-                        <td>
-
-
-
+                    <td>
 
                             <a href="/mahasiswa/delete/<?= $result['nim']?>"
                                 onclick="sweetAlert(event, '<?= $result['nim']?>')">Hapus</a>

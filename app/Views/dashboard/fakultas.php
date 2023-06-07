@@ -16,21 +16,40 @@
                         <th>ID Fakultas</th>
                         <th>Nama</th>
                         <th>Alamat</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>ID Fakultas</th>
-                        <th>Nama</th>
-                        <th>Alamat</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     <?php foreach($data_fakultas as $result):?>
                     <tr>
                         <td><?= $result['id_fakultas']?></td>
                         <td><?= $result['nama']?></td>
                         <td><?= $result['alamat_fakultas']?></td>
+                        <td>
+
+                            <a href="/fakultas/delete/<?= $result['id_fakultas']?>"
+                                onclick="sweetAlert(event, '<?= $result['nim']?>')">Hapus</a>
+                            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                            <script>
+                            function sweetAlert(event, id_fakultas) {
+                                event.preventDefault();
+                                Swal.fire({
+                                    title: 'Hapus',
+                                    text: 'Apakah Anda yakin ingin menghapus data <?= $result['nim']?>?',
+                                    icon: 'warning',
+                                    showCancelButton: true,
+                                    confirmButtonText: 'Ya',
+                                    cancelButtonText: 'Tidak',
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        // Arahkan pengguna ke halaman delete
+                                        window.location.href = "/fakultas/delete/" + id_fakultas;
+                                    }
+                                });
+                            }
+                            </script>
+
+                            </td>
                     </tr>
                     <?php endforeach?>
                 </tbody>
