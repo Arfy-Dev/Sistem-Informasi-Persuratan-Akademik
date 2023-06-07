@@ -45,7 +45,7 @@
                         <td><?= $result['alamat_mhs']?></td>
                         <td><?= $result['semester']?></td>
                         <td><?= $result['id_prodi']?></td>
-                        <td><a href="/mahasiswa<?= $result['nim']?>">Edit</a> <a
+                        <td><a href="/mahasiswa/edit/<?= $result['nim']?>">Edit</a> <a
                                 href="/mahasiswa/delete/<?= $result['nim']?>">Hapus</a></td>
                     </tr>
                     <?php endforeach?>
