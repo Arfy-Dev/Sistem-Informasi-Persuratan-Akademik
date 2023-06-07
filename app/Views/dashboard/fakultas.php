@@ -5,7 +5,7 @@
     <div class="white_box mb_30 " style="position: relative;">
         <div class="box_header border_bottom_1px  ">
             <div class="main-title">
-                <h3 class="mb_25">Data Orang Tua</h3>
+                <h3 class="mb_25">Data Fakultas</h3>
             </div>
         </div>
 
@@ -13,30 +13,24 @@
             <table id="tabel-data" class="table table-striped table-bordered" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>ID Fakultas</th>
                         <th>Nama</th>
-                        <th>Pekerjaan</th>
                         <th>Alamat</th>
-                        <th>NIM</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>ID</th>
+                        <th>ID Fakultas</th>
                         <th>Nama</th>
-                        <th>Pekerjaan</th>
                         <th>Alamat</th>
-                        <th>NIM</th>
                     </tr>
                 </tfoot>
                 <tbody>
-                    <?php foreach($data_orang_tua as $result):?>
+                    <?php foreach($data_fakultas as $result):?>
                     <tr>
-                        <td><?= $result['id_orangtua']?></td>
-                        <td><?= $result['nama_orangtua']?></td>
-                        <td><?= $result['pekerjaan_orangtua']?></td>
-                        <td><?= $result['alamat_orangtua']?></td>
-                        <td><?= $result['nim']?></td>
+                        <td><?= $result['id_fakultas']?></td>
+                        <td><?= $result['nama']?></td>
+                        <td><?= $result['alamat_fakultas']?></td>
                     </tr>
                     <?php endforeach?>
                 </tbody>
