@@ -39,7 +39,7 @@
                                 event.preventDefault();
                                 Swal.fire({
                                     title: 'Hapus',
-                                    text: 'Apakah Anda yakin ingin menghapus data <?= $result['nim']?>?',
+                                    text: 'Apakah Anda yakin ingin menghapus data <?= $result['id_orangtua']?>?',
                                     icon: 'warning',
                                     showCancelButton: true,
                                     confirmButtonText: 'Ya',
@@ -47,7 +47,7 @@
                                 }).then((result) => {
                                     if (result.isConfirmed) {
                                         // Arahkan pengguna ke halaman delete
-                                        window.location.href = "/orangtua/delete/" + nim;
+                                        window.location.href = "/orangtua/delete/" + id_orangtua;
                                     }
                                 });
                             }

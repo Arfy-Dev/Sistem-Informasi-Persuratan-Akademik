@@ -28,7 +28,7 @@
                         <td>
 
                             <a href="/fakultas/delete/<?= $result['id_fakultas']?>"
-                                onclick="sweetAlert(event, '<?= $result['nim']?>')">Hapus</a>
+                                onclick="sweetAlert(event, '<?= $result['id_fakultas']?>')">Hapus</a>
                             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                             <script>
                             function sweetAlert(event, id_fakultas) {

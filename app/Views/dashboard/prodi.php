@@ -44,7 +44,7 @@
                                 }).then((result) => {
                                     if (result.isConfirmed) {
                                         // Arahkan pengguna ke halaman delete
-                                        window.location.href = "/prodi/delete/" + nim;
+                                        window.location.href = "/prodi/delete/" + id_prodi;
                                     }
                                 });
                             }

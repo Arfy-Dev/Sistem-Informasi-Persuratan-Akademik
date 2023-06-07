@@ -28,8 +28,31 @@
                         <td><?= $result['tanggal']?></td>
                         <td><?= $result['tanggal_pengajuan']?></td>
                         <td><?= $result['id_pengajuan']?></td>
-                        <td><a href="/surat/edit/<?= $result['nomor_surat']?>">Edit</a> <a
-                                href="/surat/delete/<?= $result['nomor_surat']?>">Hapus</a></td>
+                        <td>
+
+                            <a href="/surat/delete/<?= $result['nomor_surat']?>"
+                                onclick="sweetAlert(event, '<?= $result['nomor_surat']?>')">Hapus</a>
+                            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                            <script>
+                            function sweetAlert(event, nomor_surat) {
+                                event.preventDefault();
+                                Swal.fire({
+                                    title: 'Hapus',
+                                    text: 'Apakah Anda yakin ingin menghapus data <?= $result['nomor_surat']?>?',
+                                    icon: 'warning',
+                                    showCancelButton: true,
+                                    confirmButtonText: 'Ya',
+                                    cancelButtonText: 'Tidak',
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        // Arahkan pengguna ke halaman delete
+                                        window.location.href = "/surat/delete/" + nomor_surat;
+                                    }
+                                });
+                            }
+                            </script>
+
+                            </td>
                     </tr>
                     <?php endforeach?>
                 </tbody>
