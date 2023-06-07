@@ -41,7 +41,7 @@ $routes->get('lacak/cari', 'Lacak::cari');
 $routes->get('dashboard', 'Dashboard::index');
 $routes->get('mahasiswa', 'Dashboard::mahasiswa');
 $routes->get('orangtua', 'Dashboard::orangtua');
-$routes->get('program_studi', 'Dashboard::program_studi');
+$routes->get('prodi', 'Dashboard::prodi');
 $routes->get('fakultas', 'Dashboard::fakultas');
 $routes->get('jenis_surat', 'Dashboard::jenis_surat');
 $routes->get('surat', 'Dashboard::surat');

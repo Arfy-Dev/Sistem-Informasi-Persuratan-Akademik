@@ -6,7 +6,6 @@ use CodeIgniter\Exceptions\PageNotFoundException;
 use App\Controllers\BaseController;
 use App\Models\FakultasModel;
 
-
 class Fakultas extends BaseController{
 
     protected FakultasModel $fakultasModel;

@@ -8,7 +8,7 @@ class FakultasModel extends Model
 {
     protected $table = 'fakultas';
     
-    public function getFakultas(){ 
+    public function getAllFakultas(){ 
         return $this->findAll();
      }
 }

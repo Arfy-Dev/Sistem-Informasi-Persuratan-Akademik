@@ -8,7 +8,7 @@ class ProdiModel extends Model
 {
     protected $table = 'prodi';
     
-    public function getProdi(){ 
+    public function getAllProdi(){ 
         return $this->findAll();
      }
 }
