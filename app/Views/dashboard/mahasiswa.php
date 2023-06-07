@@ -5,7 +5,7 @@
     <div class="white_box mb_30 " style="position: relative;">
         <div class="box_header border_bottom_1px  ">
             <div class="main-title">
-                <h3 class="mb_25">Data Pegawai</h3>
+                <h3 class="mb_25">Data Mahasiswa</h3>
             </div>
         </div>
 
@@ -23,15 +23,14 @@
                     </tr>
                 </thead>
                 <tfoot>
-
                     <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
-                        <th>Salary</th>
+                        <th>NIM</th>
+                        <th>Nama</th>
+                        <th>Tempat Lahir</th>
+                        <th>Tanggal Lahir</th>
+                        <th>Alamat</th>
+                        <th>Semester</th>
+                        <th>ID Prodi</th>
                     </tr>
                 </tfoot>
                 <tbody>

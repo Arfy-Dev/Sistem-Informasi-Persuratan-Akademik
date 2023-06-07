@@ -13,37 +13,30 @@
             <table id="tabel-data" class="table table-striped table-bordered" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>NIM</th>
+                        <th>ID</th>
                         <th>Nama</th>
-                        <th>Tempat Lahir</th>
-                        <th>Tanggal Lahir</th>
+                        <th>Pekerjaan</th>
                         <th>Alamat</th>
-                        <th>Semester</th>
-                        <th>ID Prodi</th>
+                        <th>NIM</th>
                     </tr>
                 </thead>
                 <tfoot>
-
                     <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
-                        <th>Salary</th>
+                        <th>ID</th>
+                        <th>Nama</th>
+                        <th>Pekerjaan</th>
+                        <th>Alamat</th>
+                        <th>NIM</th>
                     </tr>
                 </tfoot>
                 <tbody>
                     <?php foreach($data_orang_tua as $result):?>
                     <tr>
+                        <td><?= $result['id_orangtua']?></td>
+                        <td><?= $result['nama_orangtua']?></td>
+                        <td><?= $result['pekerjaan_orangtua']?></td>
+                        <td><?= $result['alamat_orangtua']?></td>
                         <td><?= $result['nim']?></td>
-                        <td><?= $result['nama']?></td>
-                        <td><?= $result['tempat_lahir']?></td>
-                        <td><?= $result['tanggal_lahir']?></td>
-                        <td><?= $result['alamat_mhs']?></td>
-                        <td><?= $result['semester']?></td>
-                        <td><?= $result['id_prodi']?></td>
                     </tr>
                     <?php endforeach?>
                 </tbody>

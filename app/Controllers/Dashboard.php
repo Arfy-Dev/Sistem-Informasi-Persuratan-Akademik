@@ -7,22 +7,23 @@ use App\Models\OrangTuaModel;
 class Dashboard extends BaseController
 {
    protected MahasiswaModel $mahasiswaModel;
+   protected OrangTuaModel $orangtuaModel;
 
    public function __construct(){
-    $this->mahasiswaModel = new MahasiswaModel();
-    $this->orangtuaModel = new OrangTuaModel();
-
+        $this->mahasiswaModel = new MahasiswaModel();
+        $this->orangtuaModel = new OrangTuaModel();
    }
 
     public function index()
     {
         $data = [
-            'title' => 'SIPA'
+            'title' => 'SI Persuratan Akademik'
         ];
 
         return view('dashboard', $data);
     }
 
+    // Tabel Mahasiswa
     public function mahasiswa(){
 
         $result = $this->mahasiswaModel->getAllMahasiswa();
@@ -34,6 +35,8 @@ class Dashboard extends BaseController
 
         return view('dashboard/mahasiswa', $data);
     }
+    
+    // Tabel Orang Tua
     public function orangtua(){
 
         $result = $this->orangtuaModel->getAllOrangTua();
