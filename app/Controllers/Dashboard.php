@@ -9,7 +9,7 @@ class Dashboard extends BaseController
 {
    protected MahasiswaModel $mahasiswaModel;
    protected OrangTuaModel $orangtuaModel;
-   protected OrangTuaModel $fakultasModel;
+   protected FakultasModel $fakultasModel;
 
    public function __construct(){
         $this->mahasiswaModel = new MahasiswaModel();
