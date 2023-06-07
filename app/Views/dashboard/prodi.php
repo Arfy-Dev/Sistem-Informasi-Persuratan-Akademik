@@ -16,6 +16,7 @@
                         <th>ID Prodi</th>
                         <th>Nama</th>
                         <th>Alamat</th>
+                        <th>ID Fakultas</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -23,6 +24,7 @@
                         <th>ID Prodis</th>
                         <th>Nama</th>
                         <th>Alamat</th>
+                        <th>ID Fakultas</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -31,6 +33,7 @@
                         <td><?= $result['id_prodi']?></td>
                         <td><?= $result['nama']?></td>
                         <td><?= $result['alamat_prodi']?></td>
+                        <td><?= $result['id_fakultas']?></td>
                     </tr>
                     <?php endforeach?>
                 </tbody>
