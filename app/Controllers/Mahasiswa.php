@@ -41,7 +41,7 @@ class Mahasiswa extends BaseController{
           'msg' => 'Gagal menghapus data',
           'error' => true
        ]);
-       return redirect()->to('/');
+       return redirect()->to('mahasiswa');
     }
 
     
