@@ -4,17 +4,20 @@ namespace App\Controllers;
 use App\Models\MahasiswaModel;
 use App\Models\OrangTuaModel;
 use App\Models\FakultasModel;
+use App\Models\ProdiModel;
 
 class Dashboard extends BaseController
 {
    protected MahasiswaModel $mahasiswaModel;
    protected OrangTuaModel $orangtuaModel;
    protected FakultasModel $fakultasModel;
+   protected ProdiModel $prodiModel;
 
    public function __construct(){
         $this->mahasiswaModel = new MahasiswaModel();
         $this->orangtuaModel = new OrangTuaModel();
         $this->fakultasModel = new FakultasModel();
+        $this->prodiModel = new ProdiModel();
    }
 
     public function index()
@@ -62,5 +65,17 @@ class Dashboard extends BaseController
         ];
 
         return view('dashboard/fakultas', $data);
+    }
+     // Tabel Prodi
+     public function prodi(){
+
+        $result = $this->prodiModel->getAllProdi();
+        
+        $data = [
+            'title' => 'Data Program Studi',
+            'data_prodi' => $result
+        ];
+
+        return view('dashboard/prodi', $data);
     }
 }
