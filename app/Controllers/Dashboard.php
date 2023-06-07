@@ -76,6 +76,6 @@ class Dashboard extends BaseController
             'data_prodi' => $result
         ];
 
-        return view('dashboard/prodi', $data);
+        return view('dashboard/program_studi', $data);
     }
 }
