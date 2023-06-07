@@ -48,6 +48,9 @@ $routes->get('surat', 'Dashboard::surat');
 
 // Penghapusan data 
 $routes->get('mahasiswa/delete/(:segment)', 'Mahasiswa::delete/$1');
+
+// Edit data
+$routes->get('mahasiswa/edit/(:segment)', 'Mahasiswa::edit/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
