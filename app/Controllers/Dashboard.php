@@ -3,6 +3,7 @@
 namespace App\Controllers;
 use App\Models\MahasiswaModel;
 use App\Models\OrangTuaModel;
+use App\Models\FakultasModel;
 
 class Dashboard extends BaseController
 {
@@ -47,5 +48,17 @@ class Dashboard extends BaseController
         ];
 
         return view('dashboard/orangtua', $data);
+    }
+     // Tabel Fakultas
+     public function fakultas(){
+
+        $result = $this->fakultasModel->getAllFakultas();
+        
+        $data = [
+            'title' => 'Data Fakultas',
+            'data_fakultas' => $result
+        ];
+
+        return view('dashboard/fakultas', $data);
     }
 }
