@@ -49,7 +49,7 @@
                                                             onkeydown="return /[A-Z, a-z]/.test(event.key)"
                                                             data-form-type="other">
                                                         <div class="invalid-feedback">
-                                                            Harap isi nama fakultas!
+                                                            Harap isi nama Prodi!
                                                         </div>
                                                     </div>
 
@@ -61,40 +61,35 @@
                                                             onkeydown="return /[A-Z, a-z]/.test(event.key)"
                                                             data-form-type="other">
                                                         <div class="invalid-feedback">
-                                                            Harap isi alamat fakultas!
+                                                            Harap isi alamat prodi!
                                                         </div>
                                                     </div>
+
                                                     <div class="form-group">
-                                                        <label for="id_fakultas" class="harus">Fakultas</label>
-                                                        <select name="id_fakultas" required
-                                                            class="form-control chosen select2-hidden-accessible"
-                                                            data-select2-id="1" tabindex="-1" aria-hidden="true">
-
-                                                            <?php foreach($data_fakultas as $result):?>
-                                                            <option value=" <?= $result['id_fakultas']?>">
-                                                                <?= $result['id_fakultas']?>
-                                                            </option>
-                                                            <?php endforeach?>
-                                                        </select>
+                                                        <label for="id_fakultas" class="harus">ID Fakultas</label>
+                                                        <input value="" id="
+                                                        id_fakultas" type="number" required
+                                                        minlength="11" maxlength="11" class="form-control "
+                                                        onkeydown="return /[0-9]/.test(event.key) || event.key === 'Backspace';"
+                                                        autofocus="" aria-describedby="
+                                            id_fakultasHelp" name="id_fakultas" data-form-type="other">
                                                         <div class="invalid-feedback">
-                                                            Harap isi fakultas!
-                                                        </div><br>
-                                                        <button type="submit" class="btn btn-primary ">
-                                                            Tambah
-                                                        </button>
-                                                </form>
-
+                                                            Harap isi ID Fakultas! 
+                                                        </div>
+                                                    </div>
                                             </div>
                                         </div>
+                                        <button type="submit" class="btn btn-primary ">
+                                            Tambah
+                                        </button>
+                                        </form>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- End Copy 2 -->
+                <!-- End Copy 2 -->
         </div>
     </div>
 
@@ -177,7 +172,7 @@
                                                                     onkeydown="return /[A-Z, a-z]/.test(event.key)"
                                                                     data-form-type="other">
                                                                 <div class="invalid-feedback">
-                                                                    Harap isi nama Anda!
+                                                                    Harap isi nama prodi!
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
@@ -186,10 +181,10 @@
                                                                     name="alamat_prodi" type="text" required
                                                                     class="form-control " autofocus=""
                                                                     aria-describedby=" alamat_prodiHelp"
-                                                                    onkeydown="return /[A-Z, a-z]/.test(event.key)"
+                                                                    onkeydown="return / [A-Z, a-z]/.test(event.key)"
                                                                     data-form-type="other">
                                                                 <div class="invalid-feedback">
-                                                                    Harap isi alamat Anda!
+                                                                    Harap isi alamat prodi!
                                                                 </div>
                                                             </div>
                                                     </div>

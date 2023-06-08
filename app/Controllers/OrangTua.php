@@ -60,6 +60,7 @@ class OrangTua extends BaseController{
           // Menyimpan data dari form
           $this->orangtuaModel->insert([
               'id_orangtua' => $this->request->getVar('id_orangtua'),
+              'nama_orangtua' => $this->request->getVar('nama_orangtua'),
               'pekerjaan_orangtua' => $this->request->getVar('pekerjaan_orangtua'),
               'alamat_orangtua' => $this->request->getVar('alamat_orangtua'),
               'nim' => $this->request->getVar('nim')
