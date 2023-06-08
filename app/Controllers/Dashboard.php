@@ -7,6 +7,7 @@ use App\Models\FakultasModel;
 use App\Models\ProdiModel;
 use App\Models\SuratModel;
 use App\Models\PengajuansuratModel;
+use App\Models\JenisSuratModel;
 
 class Dashboard extends BaseController
 {
@@ -16,6 +17,7 @@ class Dashboard extends BaseController
    protected ProdiModel $prodiModel;
    protected SuratModel $suratModel;
    protected PengajuansuratModel $pengajuansuratModel;
+   protected JenisSuratModel $jenissuratModel;
 
    public function __construct(){
         $this->mahasiswaModel = new MahasiswaModel();
@@ -24,6 +26,7 @@ class Dashboard extends BaseController
         $this->prodiModel = new ProdiModel();
         $this->suratModel = new SuratModel();
         $this->pengajuansuratModel = new PengajuansuratModel();
+        $this->jenissuratModel = new JenisSuratModel();
    }
 
     public function index()
@@ -107,5 +110,17 @@ class Dashboard extends BaseController
         ];
 
         return view('dashboard/pengajuansurat', $data);
+    }
+     // Tabel Jenis Surat
+     public function jenis_surat(){
+
+        $result = $this->jenissuratModel->getAllJenisSurat();
+        
+        $data = [
+            'title' => 'Data Jenis Surat',
+            'data_jenis_surat' => $result
+        ];
+
+        return view('dashboard/jenissurat', $data);
     }
 }
