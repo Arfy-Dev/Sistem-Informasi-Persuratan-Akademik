@@ -8,23 +8,10 @@ class MahasiswaModel extends Model
 {
     protected $table = 'mahasiswa';
     protected $primaryKey = 'nim';
+    // Start Copy 1
+    // Sesuaikan dengan field di database
     protected $allowedFields = ['nim', 'nama', 'tempat_lahir', 'tanggal_lahir', 'alamat_mhs', 'semester', 'id_prodi'];
-    
-    public function getTable() {
-        return $this->table;
-    }
-
-    public function setTable($table) {
-        $this->table = $table;
-    }
-    
-    public function getAllowedFields() {
-        return $this->allowedFields;
-    }
-
-    public function setAllowedFields($allowedFields) {
-        $this->allowedFields = $allowedFields;
-    }
+    // Start Copy 1
     
     public function getAllMahasiswa(){ 
         return $this->findAll();
