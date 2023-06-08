@@ -47,6 +47,10 @@ $routes->get('jenis_surat', 'Dashboard::jenis_surat');
 $routes->get('surat', 'Dashboard::surat');
 $routes->get('pengajuansurat', 'Dashboard::pengajuansurat');
 
+// Dashboard Pimpinan
+$routes->get('pengajuan_surat', 'Dashboard::pengajuan_surat');
+$routes->get('pengajuan_surat/ttd/(:segment)', 'PengajuanSurat::ttd/$1');
+
 // Penghapusan data 
 $routes->get('mahasiswa/delete/(:segment)', 'Mahasiswa::delete/$1');
 $routes->get('orangtua/delete/(:segment)', 'OrangTua::delete/$1');

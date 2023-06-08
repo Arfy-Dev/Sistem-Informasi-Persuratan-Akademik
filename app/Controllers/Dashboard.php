@@ -99,8 +99,9 @@ class Dashboard extends BaseController
 
         return view('dashboard/surat', $data);
     }
+    
      // Tabel Pengajuan Surat
-     public function pengajuan_surat(){
+     public function pengajuansurat(){
 
         $result = $this->pengajuansuratModel->getAllPengajuansurat();
         
@@ -111,6 +112,20 @@ class Dashboard extends BaseController
 
         return view('dashboard/pengajuansurat', $data);
     }
+    
+     // Tabel Pengajuan Surat Pimpinan
+     public function pengajuan_surat(){
+
+        $result = $this->pengajuansuratModel->getAllPengajuansurat();
+        
+        $data = [
+            'title' => 'Data Pengajuan Surat',
+            'data_pengajuan_surat' => $result
+        ];
+
+        return view('dashboard/pengajuan_surat', $data);
+    }
+    
      // Tabel Jenis Surat
      public function jenis_surat(){
 

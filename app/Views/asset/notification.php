@@ -30,6 +30,37 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 <?php endif?>
+<?php if(session()->getFlashdata('pesan') == "Surat Berhasil Ditandatangani"):?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    Swal.fire({
+        title: "Surat Berhasil Ditandatangani",
+        icon: "success",
+        confirmButtonText: 'OK'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            var data = '<?php session()->destroy('pesan')?>';
+        }
+    });
+});
+</script>
+<?php endif?>
+<?php if(session()->getFlashdata('pesan') == "Surat Gagal Ditandatangani"):?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    Swal.fire({
+        title: "Surat Gagal Ditandatangani",
+        text: "Silahkan TTD kembali",
+        icon: "error",
+        confirmButtonText: 'OK'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            var data = '<?php session()->destroy('pesan')?>';
+        }
+    });
+});
+</script>
+<?php endif?>
 <?php if(session()->getFlashdata('pesan') == "Data Sudah Tersedia"):?>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
