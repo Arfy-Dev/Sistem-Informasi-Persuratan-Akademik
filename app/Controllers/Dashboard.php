@@ -6,6 +6,7 @@ use App\Models\OrangTuaModel;
 use App\Models\FakultasModel;
 use App\Models\ProdiModel;
 use App\Models\SuratModel;
+use App\Models\PengajuansuratModel;
 
 class Dashboard extends BaseController
 {
@@ -14,6 +15,7 @@ class Dashboard extends BaseController
    protected FakultasModel $fakultasModel;
    protected ProdiModel $prodiModel;
    protected SuratModel $suratModel;
+   protected PengajuansuratModel $pengajuansuratModel;
 
    public function __construct(){
         $this->mahasiswaModel = new MahasiswaModel();
@@ -21,6 +23,7 @@ class Dashboard extends BaseController
         $this->fakultasModel = new FakultasModel();
         $this->prodiModel = new ProdiModel();
         $this->suratModel = new SuratModel();
+        $this->pengajuansuratModel = new PengajuansuratModel();
    }
 
     public function index()
@@ -92,5 +95,17 @@ class Dashboard extends BaseController
         ];
 
         return view('dashboard/surat', $data);
+    }
+     // Tabel Pengajuan Surat
+     public function pengajuan_surat(){
+
+        $result = $this->pengajuansuratModel->getAllPengajuansurat();
+        
+        $data = [
+            'title' => 'Data Pengajuan Surat',
+            'data_pengajuan_surat' => $result
+        ];
+
+        return view('dashboard/pengajuansurat', $data);
     }
 }
