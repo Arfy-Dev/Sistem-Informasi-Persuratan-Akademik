@@ -16,4 +16,10 @@ class MahasiswaModel extends Model
     public function getAllMahasiswa(){ 
         return $this->findAll();
      }
+     
+    public function getMahasiswaById($id){ 
+        return $this->find($id);
+     }
+     
+    //  $user = $userModel->find($user_id);
 }

@@ -179,7 +179,7 @@
                                     </div>
                                     <div class="form-group">
                                         <input id="kode_surat" name="kode_surat" type="hidden" class="form-control "
-                                            autofocus="" aria-describedby="kode_suratHelp" value="<?php echo 'SKAK';?>"
+                                            autofocus="" aria-describedby="kode_suratHelp" value="<?php echo 'SKBB';?>"
                                             data-form-type="other">
                                     </div>
                                     <div class="form-group">
@@ -329,7 +329,7 @@
                                     </div>
                                     <div class="form-group">
                                         <input id="kode_surat" name="kode_surat" type="hidden" class="form-control "
-                                            autofocus="" aria-describedby="kode_suratHelp" value="<?php echo 'SKAK';?>"
+                                            autofocus="" aria-describedby="kode_suratHelp" value="<?php echo 'SKMK';?>"
                                             data-form-type="other">
                                     </div>
                                     <div class="form-group">
@@ -520,7 +520,7 @@
                                     </div>
                                     <div class="form-group">
                                         <input id="kode_surat" name="kode_surat" type="hidden" class="form-control "
-                                            autofocus="" aria-describedby="kode_suratHelp" value="<?php echo 'SKAK';?>"
+                                            autofocus="" aria-describedby="kode_suratHelp" value="<?php echo 'SKTB';?>"
                                             data-form-type="other">
                                     </div>
                                     <div class="form-group">

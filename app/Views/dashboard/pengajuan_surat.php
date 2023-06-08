@@ -35,28 +35,53 @@
                         <td><?= $result['deskripsi']?></td>
                         <td><?= $result['status']?></td>
                         <td>
+                           <!-- TTD Pengajuan Surat -->
                             <a style="font-size: 12px; color:white; padding: 5px 10px;" class="btn btn-success"
                                 href="pengajuan_surat/ttd/<?= $result['id_pengajuan']?>"
-                                onclick="sweetAlert(event, '<?= $result['id_pengajuan']?>')">TTD</a>
+                                onclick="sweetAlert(event, 'ttd', '<?= $result['id_pengajuan']?>')">TTD</a>
+
+                            <!-- Lihat Surat -->
+                            <a style="font-size: 12px; color:white; padding: 5px 10px;" class="btn btn-warning"
+                                href="pengajuan_surat/cetak_surat/<?= $result['id_pengajuan']?>/<?= $result['nim']?>"
+                                onclick="sweetAlert(event, 'cetak_surat', '<?= $result['id_pengajuan']?>', '<?= $result['nim']?>')">Lihat Surat</a>
+
                             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                             <script>
-                            function sweetAlert(event, id_pengajuan) {
+                            function sweetAlert(event, action, id_pengajuan, nim) {
                                 event.preventDefault();
-                                Swal.fire({
-                                    title: 'TTD Pengajuan Surat',
-                                    text: 'Apakah Anda yakin menandatangani surat ini?',
-                                    icon: 'question',
-                                    showCancelButton: true,
-                                    confirmButtonText: 'Ya',
-                                    cancelButtonText: 'Tidak',
-                                }).then((result) => {
-                                    if (result.isConfirmed) {
-                                        // Arahkan pengguna ke halaman delete
-                                        window.location.href = "pengajuan_surat/ttd/" + id_pengajuan;
-                                    }
-                                });
+                                if (action === 'ttd') {
+                                    Swal.fire({
+                                        title: 'TTD Pengajuan Surat',
+                                        text: 'Apakah Anda yakin menandatangani surat ini?',
+                                        icon: 'question',
+                                        showCancelButton: true,
+                                        confirmButtonText: 'Ya',
+                                        cancelButtonText: 'Tidak',
+                                    }).then((result) => {
+                                        if (result.isConfirmed) {
+                                            // Arahkan pengguna ke halaman ttd
+                                            window.location.href = "pengajuan_surat/ttd/" + id_pengajuan;
+                                        }
+                                    });
+                                } else if (action === 'cetak_surat') {
+                                    Swal.fire({
+                                        title: 'Lihat PDF Surat Pengajuan?',
+                                        icon: 'question',
+                                        showCancelButton: true,
+                                        confirmButtonText: 'Ya',
+                                        cancelButtonText: 'Tidak',
+                                    }).then((result) => {
+                                        if (result.isConfirmed) {
+                                            // Arahkan pengguna ke halaman cetak_surat
+                                            window.location.href = "pengajuan_surat/cetak_surat/" + id_pengajuan + "/" + nim;
+                                        }
+                                    });
+                                }
                             }
                             </script>
+
+
+
                         </td>
                     </tr>
                     <?php endforeach?>
