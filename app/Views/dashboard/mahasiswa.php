@@ -4,8 +4,6 @@
 <?= $this->include('asset/notification')?>
 <!-- End Copy 1 -->
 
-<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
-
 <div class="col-lg-12 col-xl-12">
     <div class="white_box mb_30 " style="position: relative;">
         <div class="box_header border_bottom_1px  ">

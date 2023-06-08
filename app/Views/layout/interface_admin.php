@@ -3,7 +3,9 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>SIPA</title>
+    <title>
+        <?= $title?>
+    </title>
     <?= $this->include('asset/css')?>
     <?= $this->include('asset/js')?>
 </head>
@@ -21,86 +23,69 @@
                 <span>Data Master</span>
             </li>
             <li class="">
-                <a class="has-arrow" href="/mahasiswa" aria-expanded="false">
+                <a class="" href="/mahasiswa">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Mahasiswa</span>
                 </a>
-                <ul class="mm-collapse" style="height: 0px;">
-                    <li><a href="login.html">Tambah Data</a></li>
-                </ul>
             </li>
             <li class="">
-                <a class="has-arrow" href="orangtua" aria-expanded="false">
+                <a class="" href="orangtua">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Orang Tua</span>
                 </a>
-                <ul class="mm-collapse" style="height: 0px;">
-                    <li><a href="login.html">Tambah Data</a></li>
-                </ul>
+
             </li>
             <li class="">
-                <a class="has-arrow" href="program_studi" aria-expanded=" false">
+                <a class="" href="prodi">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Program Studi</span>
                 </a>
-                <ul class="mm-collapse" style="height: 0px;">
-                    <li><a href="login.html">Tambah Data</a></li>
-                </ul>
+
             </li>
             <li class="">
-                <a class="has-arrow" href="fakultas" aria-expanded="false">
+                <a class="" href="fakultas">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Fakultas</span>
                 </a>
-                <ul class="mm-collapse" style="height: 0px;">
-                    <li><a href="login.html">Tambah Data</a></li>
-                </ul>
+
             </li>
             <li class="">
-                <a class="has-arrow" href="jenis_surat" aria-expanded="false">
+                <a class="" href="jenis_surat">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Jenis Surat</span>
                 </a>
-                <ul class="mm-collapse" style="height: 0px;">
-                    <li><a href="login.html">Tambah Data</a></li>
-                </ul>
+
             </li>
 
             <li class="side_menu_title">
                 <span>Pengajuan</span>
             </li>
             <li class="">
-                <a class="has-arrow" href="pengajuan_surat" aria-expanded="false">
+                <a class="" href="pengajuan_surat">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Pengajuan Surat</span>
                 </a>
-                <ul class="mm-collapse" style="height: 0px;">
-                    <li><a href="login.html">Tambah Data</a></li>
-                </ul>
+
             </li>
             <li class="side_menu_title">
                 <span>Arsip Surat</span>
             </li>
             <li class="">
-                <a class="has-arrow" href="surat" aria-expanded="false">
+                <a class="" href="surat">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Surat</span>
                 </a>
-                <ul class="mm-collapse" style="height: 0px;">
-                    <li><a href="login.html">Tambah Data</a></li>
-                </ul>
+
             </li>
             <li class="side_menu_title">
                 <span>Manajemen Pengguna</span>
             </li>
             <li class="">
-                <a class="has-arrow" href="pengguna" aria-expanded="false">
+                <a class="" href="pengguna">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Pengguna</span>
                 </a>
-                <ul class="mm-collapse" style="height: 0px;">
-                    <li><a href="login.html">Tambah Data</a></li>
-                </ul>
+
             </li>
         </ul>
     </nav>
@@ -160,7 +145,8 @@
                                                 </div>
                                                 <div class="count_content">
                                                     <h3><span class="counter">520</span> </h3>
-                                                    <p>Mahasiswa</p>
+                                                    <p>Total <?= $title?>
+                                                    </p>
                                                 </div>
                                             </div>
                                             <div class="single_quick_activity d-flex">
