@@ -211,6 +211,13 @@
                                                                         value="<?= $result['nim']?>"
                                                                         data-form-type="other">
                                                                 </div>
+                                                                <div class="form-group">
+                                                                    <input id="id_prodi autorefresh" name="id_prodi"
+                                                                        type="hidden" class="form-control " autofocus=""
+                                                                        aria-describedby="id_prodiHelp"
+                                                                        value="<?= $result['id_prodi']?>"
+                                                                        data-form-type="other">
+                                                                </div>
 
                                                                 <div class="form-group">
                                                                     <label for="nama" class="harus">Nama</label>
