@@ -9,6 +9,8 @@ class FakultasModel extends Model
     protected $table = 'fakultas';
     protected $primaryKey = 'id_fakultas';
     
+    protected $allowedFields = ['id_fakultas', 'nama', 'alamat_fakultas'];
+
     public function getAllFakultas(){ 
         return $this->findAll();
      }

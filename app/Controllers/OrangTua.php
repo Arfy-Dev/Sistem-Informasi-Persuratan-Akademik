@@ -24,7 +24,7 @@ class OrangTua extends BaseController{
         return view('orangtua', $data);
     }
 
-   //  Menghapus data orangtua berdasarkan nim
+   //  Menghapus data orangtua berdasarkan id
     public function delete($id){
        $result = $this->orangtuaModel->delete($id);
 
