@@ -79,10 +79,12 @@ class Dashboard extends BaseController
      public function prodi(){
 
         $result = $this->prodiModel->getAllProdi();
+        $getFakultas = $this->fakultasModel->getAllFakultas();
         
         $data = [
             'title' => 'Data Program Studi',
-            'data_prodi' => $result
+            'data_prodi' => $result,
+            'data_fakultas' => $getFakultas
         ];
 
         return view('dashboard/prodi', $data);
