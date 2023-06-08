@@ -1,5 +1,57 @@
 <?= $this->extend('layout/interface_admin');?>
 <?= $this->section('content');?>
+<!-- Start Copy 1  -->
+<?php if(session()->getFlashdata('pesan') == "Data Berhasil di Ubah"):?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    Swal.fire({
+        title: "Data Berhasil di Ubah",
+        icon: "success",
+        confirmButtonText: 'OK'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            var data = '<?php session()->destroy('pesan')?>';
+            window.location.href = "/mahasiswa"; // Ganti dengan link yang diinginkan
+        }
+    });
+});
+</script>
+<?php endif?>
+<?php if(session()->getFlashdata('pesan') == "Data Berhasil di Tambah"):?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    Swal.fire({
+        title: "Data Berhasil di Tambah",
+        icon: "success",
+        confirmButtonText: 'OK'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            var data = '<?php session()->destroy('pesan')?>';
+            // window.location.href = "/mahasiswa"; // Ganti dengan link yang diinginkan
+        }
+    });
+});
+</script>
+<?php endif?>
+<?php if(session()->getFlashdata('pesan') == "Data Sudah Tersedia"):?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    Swal.fire({
+        title: "Data Sudah Tersedia",
+        text: "Silahkan cek NIM kembali",
+        icon: "success",
+        confirmButtonText: 'OK'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            var data = '<?php session()->destroy('pesan')?>';
+            // window.location.href = "/mahasiswa"; // Ganti dengan link yang diinginkan
+        }
+    });
+});
+</script>
+<?php endif?>
+<!-- End Copy 1  -->
+
 <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 
 <div class="col-lg-12 col-xl-12">
@@ -7,6 +59,143 @@
         <div class="box_header border_bottom_1px  ">
             <div class="main-title">
                 <h3 class="mb_25">Data Mahasiswa</h3>
+                <!-- Start Copy 2 -->
+                <button type="button" class="btn btn-primary"
+                    style="margin-top: -30px; font-size: 12px; color:white; padding: 5px 10px;" data-toggle="modal"
+                    data-target="#tambahModal">
+                    Tambah Data
+                </button>
+                <div class="modal fade" id="tambahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Tambah Data
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="card card-outline p-4">
+
+                                        <div class="card-body">
+                                            <div>
+                                                <form action="<?='/mahasiswa/save'?>" class="needs-validation"
+                                                    method="post" id="form" novalidate="novalidate">
+                                                    <div class="form-group">
+                                                        <label for="nama" class="harus">Nama</label>
+                                                        <input id="nama" required type="text" class="form-control "
+                                                            autofocus="" aria-describedby="namaHelp" name="nama"
+                                                            onkeydown="return /[A-Z, a-z]/.test(event.key)"
+                                                            data-form-type="other">
+                                                        <div class="invalid-feedback">
+                                                            Harap isi nama Anda!
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label for="nim" class="harus">NIM</label>
+                                                                <input value="" id="
+                                                                                nim" type="number" required
+                                                                    minlength="11" maxlength="11" class="form-control "
+                                                                    onkeydown="return /[0-9]/.test(event.key) || event.key === 'Backspace';"
+                                                                    autofocus="" aria-describedby="
+                                            nimHelp" name="nim" data-form-type="other">
+                                                                <div class="invalid-feedback">
+                                                                    Harap isi NIM Anda!
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label for="semester" class="harus">Semester</label>
+                                                                <input name="semester" type="number" required
+                                                                    class="form-control " autofocus=""
+                                                                    aria-describedby=" semesterHelp"
+                                                                    onkeydown="return /[0-9]/.test(event.key) || event.key === 'Backspace';"
+                                                                    data-form-type="other">
+                                                                <div class="invalid-feedback">
+                                                                    Harap isi semester Anda!
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label for="tempat_lahir" class="harus">Tempat
+                                                                    Lahir</label>
+                                                                <input id="tempat_lahir" type="text" required
+                                                                    class="form-control " autofocus=""
+                                                                    aria-describedby="tempat_lahirHelp"
+                                                                    onkeydown="return /[A-Z, a-z]/.test(event.key)"
+                                                                    name="tempat_lahir" data-form-type="other">
+                                                                <div class="invalid-feedback">
+                                                                    Harap isi tempat lahir Anda!
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group">
+                                                                <label for="tanggal_lahir" class="harus">Tanggal
+                                                                    Lahir</label>
+                                                                <div class="input-group date" data-provide="datepicker">
+                                                                    <input id=" tanggal_lahir" required type="date"
+                                                                        class="form-control "
+                                                                        aria-describedby="tanggal_lahirHelp"
+                                                                        name="tanggal_lahir" autocomplete="off"
+                                                                        data-form-type="other">
+                                                                    <div class="invalid-feedback">
+                                                                        Harap isi tanggal lahir Anda!
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="alamat_mhs" class="harus">Alamat</label>
+                                                        <input name="alamat_mhs" type="text" required
+                                                            class="form-control " autofocus=""
+                                                            aria-describedby=" alamat_mhsHelp"
+                                                            onkeydown="return /[A-Z, a-z]/.test(event.key)"
+                                                            data-form-type="other">
+                                                        <div class="invalid-feedback">
+                                                            Harap isi alamat Anda!
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="id_prodi" class="harus">Program Studi</label>
+                                                        <select name="id_prodi" required
+                                                            class="form-control chosen select2-hidden-accessible"
+                                                            data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                                            <option value="" data-select2-id="3">Pilih Prodi</option>
+                                                            <option value="SIF">S1 - Sistem Informasi</option>
+                                                            <option value="TIN">S1 - Teknik Industri</option>
+                                                            <option value="TIF">S1 - Teknik Informatika</option>
+                                                            <option value="MTK">S1 - Matematika</option>
+                                                            <option value="TEL">S1 - Teknik Elektro</option>
+                                                        </select>
+                                                        <div class="invalid-feedback">
+                                                            Harap isi program studi Anda!
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary ">
+                                            Tambah
+                                        </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Copy 2 -->
             </div>
         </div>
 
@@ -21,7 +210,9 @@
                         <th>Alamat</th>
                         <th>Semester</th>
                         <th>ID Prodi</th>
+                        <!-- Start Copy 3 -->
                         <th>Aksi</th>
+                        <!-- End Copy 3 -->
                     </tr>
                 </thead>
                 <tbody>
@@ -34,6 +225,7 @@
                         <td><?= $result['alamat_mhs']?></td>
                         <td><?= $result['semester']?></td>
                         <td><?= $result['id_prodi']?></td>
+                        <!-- Start Copy 4 -->
                         <td><button type="button" class="btn btn-warning"
                                 style="font-size: 12px; color:white; padding: 5px 10px;" data-toggle="modal"
                                 data-target="#editModal<?= $result['nim']?>">
@@ -57,15 +249,14 @@
 
                                                     <div class="card-body">
                                                         <div>
-                                                            <form action="<?= '/pengajuan/save'?>"
-                                                                class="needs-validation" method="post" id="formSKAK"
-                                                                novalidate="novalidate">
+                                                            <form action="<?='/mahasiswa/update/'. $result['nim']?>"
+                                                                class="needs-validation" method="post"
+                                                                id="form<?= $result['nim']?>" novalidate="novalidate">
                                                                 <div class="form-group">
-                                                                    <input id="id_pengajuan autorefresh"
-                                                                        name="id_pengajuan" type="hidden"
+                                                                    <input id="nim autorefresh" name="nim" type="hidden"
                                                                         class="form-control " autofocus=""
-                                                                        aria-describedby="id_pengajuanHelp"
-                                                                        value="<?= substr(uniqid(), 5, 10);?>"
+                                                                        aria-describedby="nimHelp"
+                                                                        value="<?= $result['nim']?>"
                                                                         data-form-type="other">
                                                                 </div>
 
@@ -85,9 +276,11 @@
                                                                     <div class="col-lg-6">
                                                                         <div class="form-group">
                                                                             <label for="nim" class="harus">NIM</label>
-                                                                            <input value="<?= $result['nim']?>" id="nim"
-                                                                                type="number" required minlength="11"
-                                                                                maxlength="11" class="form-control "
+                                                                            <input disabled value="<?= $result['nim']?>"
+                                                                                id="
+                                                                                nim" type="number" required
+                                                                                minlength="11" maxlength="11"
+                                                                                class="form-control "
                                                                                 onkeydown="return /[0-9]/.test(event.key) || event.key === 'Backspace';"
                                                                                 autofocus="" aria-describedby="
                                             nimHelp" name="nim" data-form-type="other">
@@ -152,11 +345,11 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="alamat" class="harus">Alamat</label>
+                                                                    <label for="alamat_mhs" class="harus">Alamat</label>
                                                                     <input value="<?= $result['alamat_mhs']?>"
-                                                                        name="alamat" type="text" required
-                                                                        class="form-control " autofocus=""
-                                                                        aria-describedby=" alamatHelp"
+                                                                        value="oke" name="alamat_mhs" type="text"
+                                                                        required class="form-control " autofocus=""
+                                                                        aria-describedby=" alamat_mhsHelp"
                                                                         onkeydown="return /[A-Z, a-z]/.test(event.key)"
                                                                         data-form-type="other">
                                                                     <div class="invalid-feedback">
@@ -199,12 +392,12 @@
                             }
                             </script>
                         </td>
+                        <!-- End Copy 4 -->
                     </tr>
                     <?php endforeach?>
                 </tbody>
             </table>
         </div>
-
     </div>
 </div>
 

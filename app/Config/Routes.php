@@ -50,7 +50,10 @@ $routes->get('surat', 'Dashboard::surat');
 $routes->get('mahasiswa/delete/(:segment)', 'Mahasiswa::delete/$1');
 
 // Edit data
-$routes->get('mahasiswa/edit/(:segment)', 'Mahasiswa::edit/$1');
+$routes->post('mahasiswa/update/(:segment)', 'Mahasiswa::update/$1');
+
+// Tambah data
+$routes->post('mahasiswa/save', 'Mahasiswa::save');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
