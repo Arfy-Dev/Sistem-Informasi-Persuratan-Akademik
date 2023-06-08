@@ -24,24 +24,62 @@ class Surat extends BaseController{
         return view('surat', $data);
     }
 
-    public function delete($id){
-       $result = $this->suratModel->delete($id);
- 
-       if ($result) {
-          session()->setFlashdata([
-             'msg' => 'Data berhasil dihapus',
-             'error' => false
-          ]);
-          return redirect()->to('/');
-       }
- 
-       session()->setFlashdata([
-          'msg' => 'Gagal menghapus data',
-          'error' => true
-       ]);
-       return redirect()->to('/');
-    }
+    //  Start Copy 1
+   //  Menghapus data surat berdasarkan no surat
+   public function delete($id){
+    $result = $this->suratModel->delete($id);
 
+    if ($result) {
+      session()->setFlashdata('pesan', 'Data Berhasil Dihapus');
+
+       return redirect()->to('surat');
+    }else{
+      session()->setFlashdata('pesan', 'Data Gagal Dihapus');
+
+      return redirect()->to('surat');
+   }
+ }
+
+//  Mengupdate data surat berdasarkan no surat
+public function update(){
+   $this->suratModel->whereIn('nomor_surat', [$this->request->getVar('nomor_surat')])->set(['tanggal' => $this->request->getVar('tanggal'),
+   'tanggal_pengajuan' => $this->request->getVar('tanggal_pengajuan'),
+   'id_pengajuan' => $this->request->getVar('id_pengajuan')])->update();
+
+   session()->setFlashdata('pesan', 'Data Berhasil di Ubah');
+
+   return redirect()->to('surat');
+}
+
+// Menyimpan data berdasarkan nomor_surat
+public function save(){
+   // Melakukan pemeriksaan nomor_surat terlebih dahulu
+   $result = $this->suratModel->where('nomor_surat', $this->request->getVar('nomor_surat'))->findAll(1);
+
+   // Jika tidak ditemukan maka simpan data
+   if(empty($result)){
+
+       // Menyimpan data dari form
+       $this->suratModel->insert([
+           'nomor_surat' => $this->request->getVar('nomor_surat'),
+           'tanggal' => $this->request->getVar('tanggal'),
+           'tanggal_pengajuan' => $this->request->getVar('tanggal_pengajuan'),
+           'id_pengajuan' => $this->request->getVar('id_pengajuan')
+       ]);
+       
+      //  Munculkan pesan berhasil
+       session()->setFlashdata('pesan', 'Data Berhasil di Tambah');
+       
+       return redirect()->to('surat');
+       
+   }else{
+      // Jika nomor_surat ditemukan maka munculkan pesan
+      session()->setFlashdata('pesan', 'Data Sudah Tersedia');
+      
+      return redirect()->to('surat');
+   }
+}    
+//  End Copy 1
     
 
 }
