@@ -1,56 +1,8 @@
 <?= $this->extend('layout/interface_admin');?>
 <?= $this->section('content');?>
-<!-- Start Copy 1  -->
-<?php if(session()->getFlashdata('pesan') == "Data Berhasil di Ubah"):?>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    Swal.fire({
-        title: "Data Berhasil di Ubah",
-        icon: "success",
-        confirmButtonText: 'OK'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            var data = '<?php session()->destroy('pesan')?>';
-            window.location.href = "/mahasiswa"; // Ganti dengan link yang diinginkan
-        }
-    });
-});
-</script>
-<?php endif?>
-<?php if(session()->getFlashdata('pesan') == "Data Berhasil di Tambah"):?>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    Swal.fire({
-        title: "Data Berhasil di Tambah",
-        icon: "success",
-        confirmButtonText: 'OK'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            var data = '<?php session()->destroy('pesan')?>';
-            // window.location.href = "/mahasiswa"; // Ganti dengan link yang diinginkan
-        }
-    });
-});
-</script>
-<?php endif?>
-<?php if(session()->getFlashdata('pesan') == "Data Sudah Tersedia"):?>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    Swal.fire({
-        title: "Data Sudah Tersedia",
-        text: "Silahkan cek NIM kembali",
-        icon: "success",
-        confirmButtonText: 'OK'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            var data = '<?php session()->destroy('pesan')?>';
-            // window.location.href = "/mahasiswa"; // Ganti dengan link yang diinginkan
-        }
-    });
-});
-</script>
-<?php endif?>
-<!-- End Copy 1  -->
+<!-- Start Copy 1 -->
+<?= $this->include('asset/notification')?>
+<!-- End Copy 1 -->
 
 <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 
@@ -378,7 +330,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 event.preventDefault();
                                 Swal.fire({
                                     title: 'Hapus',
-                                    text: 'Apakah Anda yakin ingin menghapus data <?= $result['nim']?>?',
+                                    text: "Apakah Anda yakin ingin menghapus data ini?",
                                     icon: 'warning',
                                     showCancelButton: true,
                                     confirmButtonText: 'Ya',

@@ -5,6 +5,7 @@ use App\Models\MahasiswaModel;
 use App\Models\OrangTuaModel;
 use App\Models\FakultasModel;
 use App\Models\ProdiModel;
+use App\Models\SuratModel;
 
 class Dashboard extends BaseController
 {
@@ -12,12 +13,14 @@ class Dashboard extends BaseController
    protected OrangTuaModel $orangtuaModel;
    protected FakultasModel $fakultasModel;
    protected ProdiModel $prodiModel;
+   protected SuratModel $suratModel;
 
    public function __construct(){
         $this->mahasiswaModel = new MahasiswaModel();
         $this->orangtuaModel = new OrangTuaModel();
         $this->fakultasModel = new FakultasModel();
         $this->prodiModel = new ProdiModel();
+        $this->suratModel = new SuratModel();
    }
 
     public function index()
@@ -77,5 +80,17 @@ class Dashboard extends BaseController
         ];
 
         return view('dashboard/prodi', $data);
+    }
+     // Tabel Surat
+     public function surat(){
+
+        $result = $this->suratModel->getAllSurat();
+        
+        $data = [
+            'title' => 'Data Surat',
+            'data_surat' => $result
+        ];
+
+        return view('dashboard/surat', $data);
     }
 }

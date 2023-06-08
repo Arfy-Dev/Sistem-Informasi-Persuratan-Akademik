@@ -20,15 +20,7 @@
                         <th>NIM</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nama</th>
-                        <th>Pekerjaan</th>
-                        <th>Alamat</th>
-                        <th>NIM</th>
-                    </tr>
-                </tfoot>
+
                 <tbody>
                     <?php foreach($data_orang_tua as $result):?>
                     <tr>
@@ -37,6 +29,31 @@
                         <td><?= $result['pekerjaan_orangtua']?></td>
                         <td><?= $result['alamat_orangtua']?></td>
                         <td><?= $result['nim']?></td>
+                        <td>
+
+                            <a href="/orangtua/delete/<?= $result['id_orangtua']?>"
+                                onclick="sweetAlert(event, '<?= $result['id_orangtua']?>')">Hapus</a>
+                            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                            <script>
+                            function sweetAlert(event, id_orangtua) {
+                                event.preventDefault();
+                                Swal.fire({
+                                    title: 'Hapus',
+                                    text: 'Apakah Anda yakin ingin menghapus data <?= $result['id_orangtua']?>?',
+                                    icon: 'warning',
+                                    showCancelButton: true,
+                                    confirmButtonText: 'Ya',
+                                    cancelButtonText: 'Tidak',
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        // Arahkan pengguna ke halaman delete
+                                        window.location.href = "/orangtua/delete/" + id_orangtua;
+                                    }
+                                });
+                            }
+                            </script>
+
+                        </td>
                     </tr>
                     <?php endforeach?>
                 </tbody>
