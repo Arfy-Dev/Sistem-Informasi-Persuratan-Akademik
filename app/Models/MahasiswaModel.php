@@ -8,7 +8,7 @@ class MahasiswaModel extends Model
 {
     protected $table = 'mahasiswa';
     protected $primaryKey = 'nim';
-    protected $allowedFields = ['nim', 'nama', 'tempat_lahir', 'tanggal_lahir', 'alamat_mhs', 'semester_lahir', 'prodi'];
+    protected $allowedFields = ['nim', 'nama', 'tempat_lahir', 'tanggal_lahir', 'alamat_mhs', 'semester', 'id_prodi'];
     
     public function getTable() {
         return $this->table;

@@ -29,18 +29,14 @@ class Mahasiswa extends BaseController{
        $result = $this->mahasiswaModel->delete($id);
 
        if ($result) {
-          session()->setFlashdata([
-             'msg' => 'Data berhasil dihapus',
-             'error' => false
-          ]);
-          return redirect()->to('/');
-       }
- 
-       session()->setFlashdata([
-          'msg' => 'Gagal menghapus data',
-          'error' => true
-       ]);
-       return redirect()->to('mahasiswa');
+         session()->setFlashdata('pesan', 'Data Berhasil Dihapus');
+
+          return redirect()->to('mahasiswa');
+       }else{
+         session()->setFlashdata('pesan', 'Data Gagal Dihapus');
+
+         return redirect()->to('mahasiswa');
+      }
     }
 
    //  Mengupdate data mahasiswa berdasarkan nim
