@@ -19,10 +19,10 @@
             </div>
         </div>
         <ul id="sidebar_menu" class="metismenu">
-            <li class="side_menu_title">
+            <!-- <li class="side_menu_title">
                 <span>Data Master</span>
-            </li>
-            <li class="">
+            </li> -->
+            <!-- <li class="">
                 <a class="" href="/mahasiswa">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Mahasiswa</span>
@@ -55,13 +55,13 @@
                     <span>Jenis Surat</span>
                 </a>
 
-            </li>
+            </li> -->
 
             <li class="side_menu_title">
                 <span>Pengajuan</span>
             </li>
             <li class="">
-                <a class="" href="pengajuansurat">
+                <a class="" href="pengajuan_surat">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Pengajuan Surat</span>
                 </a>
@@ -70,14 +70,14 @@
             <li class="side_menu_title">
                 <span>Arsip Surat</span>
             </li>
-            <li class="">
+            <!-- <li class="">
                 <a class="" href="surat">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Surat</span>
                 </a>
 
-            </li>
-            <li class="side_menu_title">
+            </li> -->
+            <!-- <li class="side_menu_title">
                 <span>Manajemen Pengguna</span>
             </li>
             <li class="">
@@ -86,7 +86,7 @@
                     <span>Pengguna</span>
                 </a>
 
-            </li>
+            </li> -->
         </ul>
     </nav>
 

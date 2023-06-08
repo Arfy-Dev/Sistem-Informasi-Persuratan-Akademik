@@ -1,6 +1,6 @@
-<?= $this->extend('layout/interface_admin');?>
+<?= $this->extend('layout/interface_pimpinan');?>
 <?= $this->section('content');?>
-<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+<?= $this->include('asset/notification')?>
 
 <div class="col-lg-12 col-xl-12">
     <div class="white_box mb_30 " style="position: relative;">
@@ -35,29 +35,27 @@
                         <td><?= $result['deskripsi']?></td>
                         <td><?= $result['status']?></td>
                         <td>
-
-                            <a href="/pengajuansurat/delete/<?= $result['id_pengajuan']?>"
-                                onclick="sweetAlert(event, '<?= $result['id_pengajuan']?>')">Hapus</a>
+                            <a href="pengajuan_surat/ttd/<?= $result['id_pengajuan']?>"
+                                onclick="sweetAlert(event, '<?= $result['id_pengajuan']?>')">TTD</a>
                             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                             <script>
                             function sweetAlert(event, id_pengajuan) {
                                 event.preventDefault();
                                 Swal.fire({
-                                    title: 'Hapus',
-                                    text: 'Apakah Anda yakin ingin menghapus data <?= $result['id_pengajuan']?>?',
-                                    icon: 'warning',
+                                    title: 'TTD Pengajuan Surat',
+                                    text: 'Apakah Anda yakin menandatangani surat ini?',
+                                    icon: 'question',
                                     showCancelButton: true,
                                     confirmButtonText: 'Ya',
                                     cancelButtonText: 'Tidak',
                                 }).then((result) => {
                                     if (result.isConfirmed) {
                                         // Arahkan pengguna ke halaman delete
-                                        window.location.href = "/pengajuansurat/delete/" + id_pengajuan;
+                                        window.location.href = "pengajuan_surat/ttd/" + id_pengajuan;
                                     }
                                 });
                             }
                             </script>
-
                         </td>
                     </tr>
                     <?php endforeach?>

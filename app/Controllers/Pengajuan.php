@@ -10,8 +10,7 @@ class Pengajuan extends BaseController
         $this->pengajuanModel = new \App\Models\PengajuanModel();    
     }
     
-    public function index()
-    {
+    public function index(){
         $data = [
             'title' => 'Pengajuan Surat'
         ];

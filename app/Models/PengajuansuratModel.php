@@ -4,13 +4,13 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class PengajuansuratModel extends Model
+class PengajuanSuratModel extends Model
 {
     protected $table = 'pengajuan_surat';
+    protected $allowedFields = ['id_pengajuan', 'tanggal_pengajuan', 'nim', 'kode_surat', 'tanggal_ttd', 'deskripsi', 'status'];
     
-    protected $allowedFields = ['id_pengajuan', 'tanggal_pengajuan', 'nim', 'kode_surat','tanggal_ttd', 'deksripsi', 'status'];
+    public function getAllPengajuanSurat(){ 
 
-    public function getAllPengajuansurat(){ 
         return $this->findAll();
      }
 }
