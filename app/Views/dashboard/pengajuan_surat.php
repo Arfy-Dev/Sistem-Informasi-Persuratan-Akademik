@@ -35,7 +35,8 @@
                         <td><?= $result['deskripsi']?></td>
                         <td><?= $result['status']?></td>
                         <td>
-                            <a href="pengajuan_surat/ttd/<?= $result['id_pengajuan']?>"
+                            <a style="font-size: 12px; color:white; padding: 5px 10px;" class="btn btn-success"
+                                href="pengajuan_surat/ttd/<?= $result['id_pengajuan']?>"
                                 onclick="sweetAlert(event, '<?= $result['id_pengajuan']?>')">TTD</a>
                             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                             <script>
