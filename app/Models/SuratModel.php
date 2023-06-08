@@ -9,6 +9,8 @@ class SuratModel extends Model
     protected $table = 'surat';
     protected $primaryKey = 'nomor_surat';
     
+    protected $allowedFields = ['nomor_surat', 'tanggal', 'tanggal_pengajuan', 'id_pengajuan'];
+
     public function getAllSurat(){ 
         return $this->findAll();
      }

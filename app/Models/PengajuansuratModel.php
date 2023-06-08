@@ -10,6 +10,7 @@ class PengajuanSuratModel extends Model
     protected $allowedFields = ['id_pengajuan', 'tanggal_pengajuan', 'nim', 'kode_surat', 'tanggal_ttd', 'deskripsi', 'status'];
     
     public function getAllPengajuanSurat(){ 
+
         return $this->findAll();
      }
 }
