@@ -41,6 +41,6 @@ class Fakultas extends BaseController{
        return redirect()->to('/');
     }
 
-    
+       
 
 }

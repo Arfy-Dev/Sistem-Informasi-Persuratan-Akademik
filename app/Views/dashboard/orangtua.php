@@ -18,6 +18,7 @@
                         <th>Pekerjaan</th>
                         <th>Alamat</th>
                         <th>NIM</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
 
