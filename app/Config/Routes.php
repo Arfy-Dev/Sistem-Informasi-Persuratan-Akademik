@@ -45,15 +45,34 @@ $routes->get('prodi', 'Dashboard::prodi');
 $routes->get('fakultas', 'Dashboard::fakultas');
 $routes->get('jenis_surat', 'Dashboard::jenis_surat');
 $routes->get('surat', 'Dashboard::surat');
+$routes->get('pengajuansurat', 'Dashboard::pengajuansurat');
 
 // Penghapusan data 
 $routes->get('mahasiswa/delete/(:segment)', 'Mahasiswa::delete/$1');
+$routes->get('orangtua/delete/(:segment)', 'OrangTua::delete/$1');
+$routes->get('prodi/delete/(:segment)', 'Prodi::delete/$1');
+$routes->get('fakultas/delete/(:segment)', 'Fakultas::delete/$1');
+$routes->get('jenissurat/delete/(:segment)', 'JenisSurat::delete/$1');
+$routes->get('surat/delete/(:segment)', 'Surat::delete/$1');
+$routes->get('pengajuansurat/delete/(:segment)', 'PengajuanSurat::delete/$1');
 
 // Edit data
 $routes->post('mahasiswa/update/(:segment)', 'Mahasiswa::update/$1');
+$routes->post('orangtua/update/(:segment)', 'OrangTua::update/$1');
+$routes->post('prodi/update/(:segment)', 'Prodi::update/$1');
+$routes->post('fakultas/update/(:segment)', 'Fakultas::update/$1');
+$routes->post('jenissurat/update/(:segment)', 'JenisSurat::update/$1');
+$routes->post('surat/update/(:segment)', 'Surat::update/$1');
+$routes->post('pengajuansurat/update/(:segment)', 'PengajuanSurat::update/$1');
 
 // Tambah data
 $routes->post('mahasiswa/save', 'Mahasiswa::save');
+$routes->post('orangtua/save/(:segment)', 'OrangTua::save');
+$routes->post('prodi/save/(:segment)', 'Prodi::save');
+$routes->post('fakultas/save/(:segment)', 'Fakultas::save');
+$routes->post('jenissurat/save/(:segment)', 'JenisSurat::save');
+$routes->post('surat/save/(:segment)', 'Surat::save');
+$routes->post('pengajuansurat/save/(:segment)', 'PengajuanSurat::save');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
