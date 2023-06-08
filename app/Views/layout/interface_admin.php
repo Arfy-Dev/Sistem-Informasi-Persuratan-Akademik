@@ -144,7 +144,7 @@
                                                     <img src="Hospital_files/man.svg" alt="">
                                                 </div>
                                                 <div class="count_content">
-                                                    <h3><span class="counter">520</span> </h3>
+                                                    <h3><span class="counter"> </span> </h3>
                                                     <p>Total <?= $title?>
                                                     </p>
                                                 </div>

@@ -18,12 +18,13 @@ class Mahasiswa extends BaseController{
     public function index(){
         
         $data = [
-            'title' => 'Data Mahasiswa'
+            'title' => 'Data Mahasiswa',
         ];
 
         return view('mahasiswa', $data);
     }
 
+   //  Start Copy 1
    //  Menghapus data mahasiswa berdasarkan nim
     public function delete($id){
        $result = $this->mahasiswaModel->delete($id);
@@ -53,11 +54,13 @@ class Mahasiswa extends BaseController{
       return redirect()->to('mahasiswa');
    }
 
+   // Menyimpan data berdasarkan nim
    public function save(){
+      // Melakukan pemeriksaan NIM terlebih dahulu
       $result = $this->mahasiswaModel->where('nim', $this->request->getVar('nim'))->findAll(1);
+
+      // Jika tidak ditemukan maka simpan data
       if(empty($result)){
-          // Data Tabel Mahasiswa
-          // Mendefinisikan nama tabel
 
           // Menyimpan data dari form
           $this->mahasiswaModel->insert([
@@ -68,14 +71,19 @@ class Mahasiswa extends BaseController{
               'alamat_mhs' => $this->request->getVar('alamat_mhs'),
               'semester' => $this->request->getVar('semester'),
               'id_prodi' => $this->request->getVar('id_prodi')
-          ]);    
+          ]);
+          
+         //  Munculkan pesan berhasil
           session()->setFlashdata('pesan', 'Data Berhasil di Tambah');
+          
           return redirect()->to('mahasiswa');
+          
       }else{
-         // Jika NIM ditemukan maka update field berdasarkan NIM
+         // Jika NIM ditemukan maka munculkan pesan
          session()->setFlashdata('pesan', 'Data Sudah Tersedia');
+         
          return redirect()->to('mahasiswa');
       }
   }    
-
+   //  End Copy 1
 }
