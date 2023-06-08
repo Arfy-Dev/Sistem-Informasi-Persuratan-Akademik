@@ -52,8 +52,10 @@ class Fakultas extends BaseController{
     // Menyimpan data berdasarkan id
     public function save(){
        // Melakukan pemeriksaan id terlebih dahulu
-       $result = $this->fakultasModel->where('id_fakultas', $this->request->getVar('id_fakultas'))->findAll(1);
+    //    $result = $this->fakultasModel->where('id_fakultas', $this->request->getVar('id_fakultas'))->findAll(1);
+       $result = $this->fakultasModel->where('id_fakultas', 2)->findAll(1);
  
+    //    dd($result);
        // Jika tidak ditemukan maka simpan data
        if(empty($result)){
  
@@ -71,7 +73,7 @@ class Fakultas extends BaseController{
            
        }else{
           // Jika id_fakultas ditemukan maka munculkan pesan
-          session()->setFlashdata('pesan', 'Data Sudah Tersedia');
+          session()->setFlashdata('pesan', 'ID Fakultas Sudah Tersedia');
           
           return redirect()->to('fakultas');
        }

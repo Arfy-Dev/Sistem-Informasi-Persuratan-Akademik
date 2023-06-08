@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 <?php endif?>
+
+<!-- Nofikasi berhasil menambah data -->
 <?php if(session()->getFlashdata('pesan') == "Data Berhasil di Tambah"):?>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -30,6 +32,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 <?php endif?>
+
+<!-- Notifikasi berhasil menandatangani surat -->
 <?php if(session()->getFlashdata('pesan') == "Surat Berhasil Ditandatangani"):?>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -45,6 +49,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 <?php endif?>
+
+<!-- Notifikasi gagal menandatangani surat -->
 <?php if(session()->getFlashdata('pesan') == "Surat Gagal Ditandatangani"):?>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -61,6 +67,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 <?php endif?>
+
+<!-- Notifikasi nim telah tersedia -->
 <?php if(session()->getFlashdata('pesan') == "Data Sudah Tersedia"):?>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -77,6 +85,26 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 <?php endif?>
+
+<!-- Notifikasi ID Fakultas telah tersedia -->
+<?php if(session()->getFlashdata('pesan') == "ID Fakultas Sudah Tersedia"):?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    Swal.fire({
+        title: "Data Sudah Tersedia",
+        text: "Silahkan cek ID Fakultas kembali",
+        icon: "warning",
+        confirmButtonText: 'OK'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            var data = '<?php session()->destroy('pesan')?>';
+        }
+    });
+});
+</script>
+<?php endif?>
+
+<!-- Notifikasi berhasil menghapus data -->
 <?php if(session()->getFlashdata('pesan') == "Data Berhasil Dihapus"):?>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -92,6 +120,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 <?php endif?>
+
+<!-- Notifikasi gagal menghapus data -->
 <?php if(session()->getFlashdata('pesan') == "Data Gagal Dihapus"):?>
 <script>
 document.addEventListener("DOMContentLoaded", function() {

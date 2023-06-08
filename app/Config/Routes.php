@@ -71,12 +71,12 @@ $routes->post('pengajuansurat/update/(:segment)', 'PengajuanSurat::update/$1');
 
 // Tambah data
 $routes->post('mahasiswa/save', 'Mahasiswa::save');
-$routes->post('orangtua/save/(:segment)', 'OrangTua::save');
-$routes->post('prodi/save/(:segment)', 'Prodi::save');
-$routes->post('fakultas/save/(:segment)', 'Fakultas::save');
-$routes->post('jenissurat/save/(:segment)', 'JenisSurat::save');
-$routes->post('surat/save/(:segment)', 'Surat::save');
-$routes->post('pengajuansurat/save/(:segment)', 'PengajuanSurat::save');
+$routes->post('orangtua/save', 'OrangTua::save');
+$routes->post('prodi/save', 'Prodi::save');
+$routes->post('fakultas/save', 'Fakultas::save');
+$routes->post('jenissurat/save', 'JenisSurat::save');
+$routes->post('surat/save', 'Surat::save');
+$routes->post('pengajuansurat/save', 'PengajuanSurat::save');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
