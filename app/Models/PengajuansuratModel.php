@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Models;
+// namespace App\Config;
 
 use CodeIgniter\Model;
+// use CodeIgniter\Config;
 
 class PengajuanSuratModel extends Model
 {
@@ -18,4 +20,21 @@ class PengajuanSuratModel extends Model
      public function getPengajuanSuratById($id){ 
         return $this->find($id);
      }
+
+    //  function sendEmail($attachment, $to, $title, $message){
+
+	// 	$this->setFrom('12150313844@students.uin-suska.ac.id');
+	// 	$this->setTo($to);
+
+	// 	$this->attach($attachment);
+
+	// 	$this->setSubject($title);
+	// 	$this->setMessage($message);
+
+	// 	if(! $this->email->send()){
+	// 		return false;
+	// 	}else{
+	// 		return true;
+	// 	}
+	// }
 }

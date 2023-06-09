@@ -34,7 +34,7 @@
                         <td><?= $result['tanggal_ttd']?></td>
                         <td><?= $result['deskripsi']?></td>
                         <td><?= $result['status']?></td>
-                        <td>
+                        <!-- <td>
 
                             <a href="/pengajuansurat/delete/<?= $result['id_pengajuan']?>"
                                 onclick="sweetAlert(event, '<?= $result['id_pengajuan']?>')">Hapus</a>
@@ -58,6 +58,56 @@
                             }
                             </script>
 
+                        </td> -->
+                        <td>
+                            <!-- TTD Pengajuan Surat -->
+                            <a style="font-size: 12px; color:white; padding: 5px 10px;" class="btn btn-warning"
+                                href="pengajuan_surat/cetak_surat/<?= $result['id_pengajuan']?>/<?= $result['nim']?>"
+                                onclick="sweetAlert(event, 'cetak_surat', '<?= $result['id_pengajuan']?>', '<?= $result['nim']?>')">Lihat
+                                Surat</a>
+                            <!-- Lihat Surat -->
+                            <?php if($result['status'] == "Ditandatangani"):?>
+                            <a style="font-size: 12px; color:white; padding: 5px 10px;" class="btn btn-success"
+                                href="pengajuan_surat/kirim_surat/<?= $result['id_pengajuan']?>"
+                                onclick="sweetAlert(event, 'kirim_surat', '<?= $result['id_pengajuan']?>')">Kirim
+                                Surat</a>
+                            <?php endif?>
+                            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                            <script>
+                            function sweetAlert(event, action, id_pengajuan, nim) {
+                                event.preventDefault();
+                                if (action === 'kirim_surat') {
+                                    Swal.fire({
+                                        title: 'Kirim Surat',
+                                        text: 'Apakah Anda yakin mengirim surat ini?',
+                                        icon: 'question',
+                                        showCancelButton: true,
+                                        confirmButtonText: 'Ya',
+                                        cancelButtonText: 'Tidak',
+                                    }).then((result) => {
+                                        if (result.isConfirmed) {
+                                            // Arahkan pengguna ke halaman ttd
+                                            window.location.href = "pengajuan_surat/kirim_surat/" +
+                                            id_pengajuan;
+                                        }
+                                    });
+                                } else if (action === 'cetak_surat') {
+                                    Swal.fire({
+                                        title: 'Lihat PDF Surat Pengajuan?',
+                                        icon: 'question',
+                                        showCancelButton: true,
+                                        confirmButtonText: 'Ya',
+                                        cancelButtonText: 'Tidak',
+                                    }).then((result) => {
+                                        if (result.isConfirmed) {
+                                            // Arahkan pengguna ke halaman cetak_surat
+                                            window.location.href = "pengajuan_surat/cetak_surat/" +
+                                                id_pengajuan + "/" + nim;
+                                        }
+                                    });
+                                }
+                            }
+                            </script>
                         </td>
                     </tr>
                     <?php endforeach?>
