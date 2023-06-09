@@ -70,13 +70,13 @@
             <li class="side_menu_title">
                 <span>Arsip Surat</span>
             </li>
-            <!-- <li class="">
-                <a class="" href="surat">
+            <li class="">
+                <a class="" href="persuratan">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Surat</span>
                 </a>
 
-            </li> -->
+            </li>
             <!-- <li class="side_menu_title">
                 <span>Manajemen Pengguna</span>
             </li>

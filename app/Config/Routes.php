@@ -46,12 +46,15 @@ $routes->get('fakultas', 'Dashboard::fakultas');
 $routes->get('jenis_surat', 'Dashboard::jenis_surat');
 $routes->get('surat', 'Dashboard::surat');
 $routes->get('pengajuansurat', 'Dashboard::pengajuansurat');
+$routes->get('lihat_surat/(:segment)', 'PengajuanSurat::lihat_surat/$1');
 
 // Dashboard Pimpinan
 $routes->get('pengajuan_surat', 'Dashboard::pengajuan_surat');
 $routes->get('pengajuan_surat/ttd/(:segment)', 'PengajuanSurat::ttd/$1');
 $routes->get('pengajuan_surat/cetak_surat/(:segment)/(:segment)', 'PengajuanSurat::cetak_surat/$1/$2');
-$routes->get('pengajuan_surat/kirim_surat', 'PengajuanSurat::kirim_surat');
+$routes->get('pengajuan_surat/kirim_surat/(:segment)', 'PengajuanSurat::kirim_surat/$1');
+$routes->get('persuratan', 'Dashboard::persuratan');
+// $routes->get('persuratan/cetak_surat(:segment)', 'PengajuanSurat::cetak_surat/$1');
 
 // Penghapusan data 
 $routes->get('mahasiswa/delete/(:segment)', 'Mahasiswa::delete/$1');

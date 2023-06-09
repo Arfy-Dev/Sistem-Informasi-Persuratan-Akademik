@@ -140,4 +140,17 @@ class Dashboard extends BaseController
 
         return view('dashboard/jenissurat', $data);
     }
+
+     // Tabel Surat untuk Pimpinan
+     public function persuratan(){
+
+        $result = $this->suratModel->getAllSurat();
+        
+        $data = [
+            'title' => 'Data Surat',
+            'data_surat' => $result
+        ];
+
+        return view('dashboard/persuratan', $data);
+    }
 }

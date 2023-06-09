@@ -44,10 +44,17 @@ document.addEventListener("DOMContentLoaded", function() {
                             Status
                             <span class="badge badge-primary badge-pill">' . $result['status'] . '</span>
                         </li>';
-                        
+                        if(!empty($result['deskripsi'])){
+                            echo $html = '<li class="list-group-item d-flex justify-content-between align-items-center">
+                            Surat
+                            <span class="badge badge-primary badge-pill"><a target="_blank" style="color:white;"
+                                    href="'.$result['deskripsi'].'">Cek Disini</a></span>
+                            </li>';
                         }
+                    }
                     }?>
                 </ul>
+                <a href=""></a>
             </div>
             <div class="modal-footer">
                 <button type="button" id="closeLacak" class="btn btn-secondary tutup"

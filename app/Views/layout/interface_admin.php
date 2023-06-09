@@ -138,7 +138,7 @@
                             <div class="quick_activity">
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="quick_activity_wrap">
+                                        <!-- <div class="quick_activity_wrap">
                                             <div class="single_quick_activity d-flex">
                                                 <div class="icon">
                                                     <img src="Hospital_files/man.svg" alt="">
@@ -176,7 +176,7 @@
                                                     <p>Dropout</p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>

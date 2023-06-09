@@ -138,3 +138,38 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 <?php endif?>
 <!-- End Copy 1  -->
+
+<!-- Notifikasi berhasil mengirim surat -->
+<?php if(session()->getFlashdata('pesan') == "Surat Berhasil Dikirim"):?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    Swal.fire({
+        title: "Surat Berhasil Dikirim",
+        icon: "success",
+        confirmButtonText: 'OK'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            var data = '<?php session()->destroy('pesan')?>';
+        }
+    });
+});
+</script>
+<?php endif?>
+
+<!-- Notifikasi gagal mengirim surat -->
+<?php if(session()->getFlashdata('pesan') == "Surat Gagal Dikirim"):?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    Swal.fire({
+        title: "Surat Gagal Dikirim",
+        text: "Silahkan kirim kembali",
+        icon: "error",
+        confirmButtonText: 'OK'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            var data = '<?php session()->destroy('pesan')?>';
+        }
+    });
+});
+</script>
+<?php endif?>

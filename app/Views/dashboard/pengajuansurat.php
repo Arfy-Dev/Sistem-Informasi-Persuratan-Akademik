@@ -1,6 +1,6 @@
 <?= $this->extend('layout/interface_admin');?>
 <?= $this->section('content');?>
-<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+<?= $this->include('asset/notification')?>
 
 <div class="col-lg-12 col-xl-12">
     <div class="white_box mb_30 " style="position: relative;">
@@ -19,7 +19,6 @@
                         <th>NIM</th>
                         <th>Kode Surat</th>
                         <th>Tanggal TTD</th>
-                        <th>Deksripsi</th>
                         <th>Status</th>
                         <th>Aksi</th>
                     </tr>
@@ -32,7 +31,6 @@
                         <td><?= $result['nim']?></td>
                         <td><?= $result['kode_surat']?></td>
                         <td><?= $result['tanggal_ttd']?></td>
-                        <td><?= $result['deskripsi']?></td>
                         <td><?= $result['status']?></td>
                         <!-- <td>
 
@@ -61,25 +59,28 @@
                         </td> -->
                         <td>
                             <!-- TTD Pengajuan Surat -->
+                            <?php if ($result['status'] == "Dikirim"): ?>
                             <a style="font-size: 12px; color:white; padding: 5px 10px;" class="btn btn-warning"
-                                href="pengajuan_surat/cetak_surat/<?= $result['id_pengajuan']?>/<?= $result['nim']?>"
-                                onclick="sweetAlert(event, 'cetak_surat', '<?= $result['id_pengajuan']?>', '<?= $result['nim']?>')">Lihat
+                                href="<?= $result['deskripsi'] ?>" onclick="sweetAlert(event, 'cetak_surat')">Lihat
                                 Surat</a>
-                            <!-- Lihat Surat -->
-                            <?php if($result['status'] == "Ditandatangani"):?>
+                            <?php endif; ?>
+
+                            <!-- Kirim Surat -->
+                            <?php if ($result['status'] == "Ditandatangani"): ?>
                             <a style="font-size: 12px; color:white; padding: 5px 10px;" class="btn btn-success"
-                                href="pengajuan_surat/kirim_surat/<?= $result['id_pengajuan']?>"
-                                onclick="sweetAlert(event, 'kirim_surat', '<?= $result['id_pengajuan']?>')">Kirim
+                                href="pengajuan_surat/kirim_surat/<?= $result['id_pengajuan'] ?>"
+                                onclick="sweetAlert(event, 'kirim_surat', '<?= $result['id_pengajuan'] ?>')">Kirim
                                 Surat</a>
-                            <?php endif?>
+                            <?php endif; ?>
+
                             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                             <script>
-                            function sweetAlert(event, action, id_pengajuan, nim) {
+                            function sweetAlert(event, action, id_pengajuan) {
                                 event.preventDefault();
                                 if (action === 'kirim_surat') {
                                     Swal.fire({
                                         title: 'Kirim Surat',
-                                        text: 'Apakah Anda yakin mengirim surat ini?',
+                                        text: 'Apakah Anda yakin ingin mengirim surat ini?',
                                         icon: 'question',
                                         showCancelButton: true,
                                         confirmButtonText: 'Ya',
@@ -88,7 +89,7 @@
                                         if (result.isConfirmed) {
                                             // Arahkan pengguna ke halaman ttd
                                             window.location.href = "pengajuan_surat/kirim_surat/" +
-                                            id_pengajuan;
+                                                id_pengajuan;
                                         }
                                     });
                                 } else if (action === 'cetak_surat') {
@@ -101,14 +102,14 @@
                                     }).then((result) => {
                                         if (result.isConfirmed) {
                                             // Arahkan pengguna ke halaman cetak_surat
-                                            window.location.href = "pengajuan_surat/cetak_surat/" +
-                                                id_pengajuan + "/" + nim;
+                                            window.location.href = <?= $result['deskripsi'] ?>;
                                         }
                                     });
                                 }
                             }
                             </script>
                         </td>
+
                     </tr>
                     <?php endforeach?>
                 </tbody>

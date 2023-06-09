@@ -20,7 +20,7 @@ class PengajuanSuratModel extends Model
      public function getPengajuanSuratById($id){ 
         return $this->find($id);
      }
-
+     
     //  function sendEmail($attachment, $to, $title, $message){
 
 	// 	$this->setFrom('12150313844@students.uin-suska.ac.id');

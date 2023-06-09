@@ -4,15 +4,20 @@ namespace App\Controllers;
 
 use App\Models\PengajuanSuratModel;
 use App\Models\MahasiswaModel;
+use App\Models\SuratModel;
 
 class PengajuanSurat extends BaseController{
 
     protected PengajuanSuratModel $pengajuanSuratModel;
     protected MahasiswaModel $mahasiswaModel;
+    protected SuratModel $suratModel;
+    protected $nomorSurat;
+    protected $temp;
     
     public function __construct(){
        $this->pengajuanSuratModel = new PengajuanSuratModel();
        $this->mahasiswaModel = new MahasiswaModel();
+       $this->suratModel = new SuratModel();
     }
     
     public function index(){
@@ -27,12 +32,29 @@ class PengajuanSurat extends BaseController{
         // Variabel waktu saat ini
         $date = date('Y-m-d');
         
+        //nomor surat 
+        $this->nomorSurat += 1;
+        
         // Update tanggal ttd dan status berdasarkan id_pengajuan
         $result = $this->pengajuanSuratModel->whereIn('id_pengajuan', [$id_pengajuan]
         )->set(['tanggal_ttd' => $date,
         'status' => 'Ditandatangani'])->update();
 
+        $data_pengajuan = $this->pengajuanSuratModel->getPengajuanSuratById($id_pengajuan);
+
+        $total_pengajuan = $this->pengajuanSuratModel->getAllPengajuanSurat();
+        // dd(count($total_pengajuan));
+        $this->nomorSurat = count($total_pengajuan);
+        
         if($result){
+             // Jika pengajuan sudah ditandantangani maka masukkan surat ke arsip surat
+            $this->suratModel->insert([
+                'nomor_surat' => $this->nomorSurat . "/" . $data_pengajuan['kode_surat'] . "/" . substr($date, 0, 4),
+                'tanggal' => $date,
+                'tanggal_pengajuan' => $data_pengajuan['tanggal_pengajuan'],
+                'id_pengajuan' => $id_pengajuan
+             ]);
+    
             // Jika berhasil mengupdate kirim notifikasi berhasil 
             session()->setFlashdata('pesan', 'Surat Berhasil Ditandatangani');
             return redirect()->to('pengajuan_surat');
@@ -84,5 +106,25 @@ class PengajuanSurat extends BaseController{
         ];
         
         return view('cetak_surat', $data);
+   }
+
+   public function kirim_surat($id_pengajuan){
+        // Mengumpulkan data pengajuan berdasarkan id pengajuan
+        $data_pengajuan = $this->pengajuanSuratModel->getPengajuanSuratById($id_pengajuan);
+        
+        // lakukan update data
+        $result = $this->pengajuanSuratModel->whereIn('id_pengajuan', [$id_pengajuan]
+        )->set(['deskripsi' => 'http://localhost:8080/pengajuan_surat/cetak_surat/'. $id_pengajuan . '/' . $data_pengajuan['nim'],
+        'status' => 'Dikirim'])->update();
+
+        session()->setFlashdata('pesan', 'Surat Berhasil Dikirim');
+        return redirect()->to('pengajuansurat');
+   }
+
+   public function lihat_surat($id_pengajuan){
+        // Kumpulkan data berdasarkan id pengajuan
+        $data_pengajuan = $this->pengajuanSuratModel->getPengajuanSuratById($id_pengajuan);
+
+        return redirect()->to($data_pengajuan['deskripsi']);
    }
 }

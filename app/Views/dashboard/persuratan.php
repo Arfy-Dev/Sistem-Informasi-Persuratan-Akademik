@@ -1,4 +1,4 @@
-<?= $this->extend('layout/interface_admin');?>
+<?= $this->extend('layout/interface_pimpinan');?>
 <?= $this->section('content');?>
 <?= $this->include('asset/notification')?>
 
@@ -117,33 +117,11 @@
                         <td><?= $result['tanggal_pengajuan']?></td>
                         <td><?= $result['id_pengajuan']?></td>
                         <td>
-                            <!-- Lihat Surat -->
                             <a style="font-size: 12px; color:white; padding: 5px 10px;" class="btn btn-warning"
-                                href="lihat_surat/<?= $result['id_pengajuan'] ?>"
-                                onclick="sweetAlert(event, 'lihat_surat')">Lihat Surat</a>
-
-                            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                            <script>
-                            function sweetAlert(event, action) {
-                                event.preventDefault();
-                                if (action === 'lihat_surat') {
-                                    Swal.fire({
-                                        title: 'Lihat PDF Surat Pengajuan?',
-                                        icon: 'question',
-                                        showCancelButton: true,
-                                        confirmButtonText: 'Ya',
-                                        cancelButtonText: 'Tidak',
-                                    }).then((result) => {
-                                        if (result.isConfirmed) {
-                                            // Arahkan pengguna ke halaman lihat_surat
-                                            window.location.href = "lihat_surat/<?= $result['id_pengajuan'] ?>";
-                                        }
-                                    });
-                                }
-                            }
-                            </script>
+                                href="pengajuan_surat/cetak_surat/<?= $result['id_pengajuan']?>/<?= $result['id_pengajuan']?>"
+                                onclick="sweetAlert(event, 'cetak_surat', '<?= $result['id_pengajuan']?>', '<?= $result['id_pengajuan']?>')">Lihat
+                                Surat</a>
                         </td>
-
                     </tr>
                     <?php endforeach?>
                 </tbody>
