@@ -31,16 +31,54 @@ class JenisSurat extends BaseController{
              'msg' => 'Data berhasil dihapus',
              'error' => false
           ]);
-          return redirect()->to('/');
+          return redirect()->to('jenis_surat');
        }
  
        session()->setFlashdata([
           'msg' => 'Gagal menghapus data',
           'error' => true
        ]);
-       return redirect()->to('/');
+       return redirect()->to('jenis_surat');
     }
 
-    
-
-}
+    public function update(){
+        $this->jenissuratModel->whereIn('kode_surat', [$this->request->getVar('kode_surat')])->set(['jenis_surat' => $this->request->getVar('jenis_surat')])->update();
+  
+  
+        session()->setFlashdata('pesan', 'Data Berhasil di Ubah');
+     
+        return redirect()->to('jenis_surat');
+     }
+  
+     
+     public function save(){
+        // Melakukan pemeriksaan NIM terlebih dahulu
+        $result = $this->jenissuratModel->where('kode_surat', $this->request->getVar('kode_surat'))->findAll(1);
+        $result = $this->jenissuratModel->where('jenis_surat', $this->request->getVar('jenis_surat'))->findAll(2);
+  
+        
+  
+        // Jika tidak ditemukan maka simpan data
+        if(empty($result)){
+  
+            // Menyimpan data dari form
+            $this->jenissuratModel->insert([
+                'kode_surat' => $this->request->getVar('kode_surat'),
+                'jenis_surat' => $this->request->getVar('jenis_surat')
+                
+            ]);
+            
+           //  Munculkan pesan berhasil
+            session()->setFlashdata('pesan', 'Data Berhasil di Tambah');
+            
+            return redirect()->to('jenis_surat');
+            
+        }else{
+           // Jika kode surat ditemukan maka munculkan pesan
+           session()->setFlashdata('pesan', 'Data Sudah Tersedia');
+           
+           return redirect()->to('jenis_surat');
+        }
+    }    
+     //  End Copy 1
+  }
