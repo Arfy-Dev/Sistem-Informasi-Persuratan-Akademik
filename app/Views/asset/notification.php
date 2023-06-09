@@ -173,3 +173,21 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 <?php endif?>
+
+<!-- Surat belum dikirim -->
+<?php if(session()->getFlashdata('pesan') == "Surat Belum Dikirim"):?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    Swal.fire({
+        title: "Surat Belum Dikirim",
+        text: "Tunggulah hingga surat dikirim oleh admin!",
+        icon: "error",
+        confirmButtonText: 'OK'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            var data = '<?php session()->destroy('pesan')?>';
+        }
+    });
+});
+</script>
+<?php endif?>

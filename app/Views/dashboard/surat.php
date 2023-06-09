@@ -143,7 +143,6 @@
                             }
                             </script>
                         </td>
-
                     </tr>
                     <?php endforeach?>
                 </tbody>

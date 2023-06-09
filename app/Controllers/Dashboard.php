@@ -148,7 +148,7 @@ class Dashboard extends BaseController
         
         $data = [
             'title' => 'Data Surat',
-            'data_surat' => $result
+            'data_surat' => $result,
         ];
 
         return view('dashboard/persuratan', $data);

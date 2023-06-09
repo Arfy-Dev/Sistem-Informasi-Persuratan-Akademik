@@ -121,10 +121,17 @@ class PengajuanSurat extends BaseController{
         return redirect()->to('pengajuansurat');
    }
 
-   public function lihat_surat($id_pengajuan){
-        // Kumpulkan data berdasarkan id pengajuan
-        $data_pengajuan = $this->pengajuanSuratModel->getPengajuanSuratById($id_pengajuan);
+   public function lihat_surat($id_pengajuan) {
+    // Kumpulkan data berdasarkan id pengajuan
+    $data_pengajuan = $this->pengajuanSuratModel->getPengajuanSuratById($id_pengajuan);
 
+    if (!empty($data_pengajuan['deskripsi'])) {
         return redirect()->to($data_pengajuan['deskripsi']);
-   }
+    } else {
+        session()->setFlashdata('pesan', 'Surat Belum Dikirim');
+        return redirect()->back(); // Mengarahkan ke halaman sebelumnya
+    }
+}
+
+
 }

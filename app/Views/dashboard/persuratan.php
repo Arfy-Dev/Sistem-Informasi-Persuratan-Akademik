@@ -117,10 +117,43 @@
                         <td><?= $result['tanggal_pengajuan']?></td>
                         <td><?= $result['id_pengajuan']?></td>
                         <td>
+                            <!-- Lihat Surat -->
                             <a style="font-size: 12px; color:white; padding: 5px 10px;" class="btn btn-warning"
-                                href="pengajuan_surat/cetak_surat/<?= $result['id_pengajuan']?>/<?= $result['id_pengajuan']?>"
-                                onclick="sweetAlert(event, 'cetak_surat', '<?= $result['id_pengajuan']?>', '<?= $result['id_pengajuan']?>')">Lihat
-                                Surat</a>
+                                href="lihat_surat/<?= $result['id_pengajuan'] ?>"
+                                onclick="sweetAlert(event, 'lihat_surat')">Lihat Surat</a>
+
+                            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                            <script>
+                            function sweetAlert(event, action) {
+                                event.preventDefault();
+                                if (action === 'lihat_surat') {
+                                    Swal.fire({
+                                        title: 'Lihat PDF Surat Pengajuan?',
+                                        icon: 'question',
+                                        showCancelButton: true,
+                                        confirmButtonText: 'Ya',
+                                        cancelButtonText: 'Tidak',
+                                    }).then((result) => {
+                                        if (result.isConfirmed) {
+                                            try {
+                                                // Arahkan pengguna ke halaman lihat_surat
+                                                window.location.href =
+                                                    "lihat_surat/<?= $result['id_pengajuan'] ?>";
+                                            } catch (error) {
+                                                // Tampilkan pesan SweetAlert jika terjadi kesalahan
+                                                Swal.fire({
+                                                    title: 'Surat Belum Dikirim',
+                                                    text: 'Tunggulah hingga surat dikirim oleh admin',
+                                                    icon: 'error',
+                                                    confirmButtonText: 'OK',
+                                                });
+                                            }
+                                        }
+                                    });
+                                }
+                            }
+                            </script>
+
                         </td>
                     </tr>
                     <?php endforeach?>
