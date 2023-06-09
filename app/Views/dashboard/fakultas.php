@@ -36,7 +36,7 @@
                                                         <label for="id_fakultas" class="harus">ID Fakultas</label>
                                                         <input id="id_fakultas" type="text" required
                                                                 class="form-control " autofocus=""
-                                                                aria-describedby=" semesterHelp"
+                                                                aria-describedby=" id_pengajuanHelp"
                                                                 onkeydown="return /[0-9]/.test(event.key) || event.key === 'Backspace';"
                                                                 data-form-type="other">
                                                         <div class="invalid-feedback">
@@ -148,6 +148,7 @@
                                                                     <div class="invalid-feedback">
                                                                         Harap isi ID Fakultas!
                                                                     </div>
+                                                                </div>
                                                                     <div class="form-group">
                                                                         <label for="nama" class="harus">Nama</label>
                                                                         <input value="<?= $result['nama']?>" id="nama"
@@ -160,7 +161,7 @@
                                                                             Harap isi nama Anda!
                                                                         </div>
                                                                     </div>
-                                                                </div>
+                                                        
                                                                 <div class="form-group">
                                                                     <label for="alamat_fakultas"
                                                                         class="harus">Alamat</label>

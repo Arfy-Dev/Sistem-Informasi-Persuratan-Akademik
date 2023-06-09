@@ -72,14 +72,14 @@
                                                         </div>
                                                     </div>
                                                 <div class="form-group">
-                                                        <label for="id_pengajuan" class="harus">Id Pengajuan</label>
-                                                        <input id="id_pengajuan" type="number" required
-                                                            class="form-control " autofocus=""
-                                                            aria-describedby="id_pengajuanHelp"
-                                                            onkeydown="return /[A-Z, a-z]/.test(event.key)"
-                                                            name="id_pengajuan" data-form-type="other">
+                                                    <label for="id_pengajuan" class="harus">ID Pengajuan</label>
+                                                    <input id="id_pengajuan" type="text" required
+                                                                class="form-control " autofocus=""
+                                                                aria-describedby=" id_pengajuanHelp"
+                                                                onkeydown="return /[0-9]/.test(event.key) || event.key === 'Backspace';"
+                                                                data-form-type="other">
                                                         <div class="invalid-feedback">
-                                                            Harap isi id pengajuan Anda!
+                                                            Harap isi ID Pengajuan!
                                                         </div>
                                                     </div>
                                                 </div>
