@@ -41,10 +41,11 @@
                                 onclick="sweetAlert(event, 'ttd', '<?= $result['id_pengajuan']?>')">TTD</a>
 
                             <!-- Lihat Surat -->
+                            <?php if($result['status'] == "Ditandatangani"):?>
                             <a style="font-size: 12px; color:white; padding: 5px 10px;" class="btn btn-warning"
                                 href="pengajuan_surat/cetak_surat/<?= $result['id_pengajuan']?>/<?= $result['nim']?>"
                                 onclick="sweetAlert(event, 'cetak_surat', '<?= $result['id_pengajuan']?>', '<?= $result['nim']?>')">Lihat Surat</a>
-
+                            <?php endif?>
                             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                             <script>
                             function sweetAlert(event, action, id_pengajuan, nim) {
@@ -79,9 +80,6 @@
                                 }
                             }
                             </script>
-
-
-
                         </td>
                     </tr>
                     <?php endforeach?>

@@ -51,6 +51,7 @@ $routes->get('pengajuansurat', 'Dashboard::pengajuansurat');
 $routes->get('pengajuan_surat', 'Dashboard::pengajuan_surat');
 $routes->get('pengajuan_surat/ttd/(:segment)', 'PengajuanSurat::ttd/$1');
 $routes->get('pengajuan_surat/cetak_surat/(:segment)/(:segment)', 'PengajuanSurat::cetak_surat/$1/$2');
+$routes->get('pengajuan_surat/kirim_surat', 'PengajuanSurat::kirim_surat');
 
 // Penghapusan data 
 $routes->get('mahasiswa/delete/(:segment)', 'Mahasiswa::delete/$1');

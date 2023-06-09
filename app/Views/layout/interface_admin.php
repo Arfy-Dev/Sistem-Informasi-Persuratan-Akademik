@@ -50,7 +50,7 @@
 
             </li>
             <li class="">
-                <a class="" href="jenissurat">
+                <a class="" href="jenis_surat">
                     <img src="/css/Hospital_files/2.svg" alt="">
                     <span>Jenis Surat</span>
                 </a>

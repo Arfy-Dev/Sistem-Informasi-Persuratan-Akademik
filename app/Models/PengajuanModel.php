@@ -25,4 +25,6 @@ class PengajuanModel extends Model
     public function setAllowedFields($allowedFields) {
         $this->allowedFields = $allowedFields;
     }
+
+
 }

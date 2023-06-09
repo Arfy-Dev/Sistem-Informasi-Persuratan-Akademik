@@ -9,7 +9,7 @@ class PengajuanSurat extends BaseController{
 
     protected PengajuanSuratModel $pengajuanSuratModel;
     protected MahasiswaModel $mahasiswaModel;
-
+    
     public function __construct(){
        $this->pengajuanSuratModel = new PengajuanSuratModel();
        $this->mahasiswaModel = new MahasiswaModel();
@@ -43,6 +43,7 @@ class PengajuanSurat extends BaseController{
         }
     }
 
+    // Mencetak surat pengajuan
    public function cetak_surat($id_pengajuan, $nim) {
         // id pengajuan
         $data_pengajuan = $this->pengajuanSuratModel->getPengajuanSuratById($id_pengajuan);
