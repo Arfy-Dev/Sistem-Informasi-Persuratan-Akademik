@@ -1366,7 +1366,7 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
              id="text596"><tspan
                x="0 6.3720002 11.28 13.92 17.040001"
                y="0"
-               id="tspan594">or : </tspan></text></g></g><g
+               id="tspan594">or : <?= $data_surat['nomor_surat']?></tspan></text></g></g><g
          id="g598"><g
            id="g600"
            clip-path="url(#clipPath604)"><text
@@ -1375,7 +1375,7 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
              id="text608"><tspan
                x="0 6.5999999 13.2"
                y="0"
-               id="tspan606">126</tspan></text></g></g><g
+               id="tspan606"></tspan></text></g></g><g
          id="g610"><g
            id="g612"
            clip-path="url(#clipPath616)"><text
@@ -1384,7 +1384,7 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
              id="text620"><tspan
                x="0"
                y="0"
-               id="tspan618">/</tspan></text></g></g><g
+               id="tspan618"></tspan></text></g></g><g
          id="g622"><g
            id="g624"
            clip-path="url(#clipPath628)"><text
@@ -1393,7 +1393,7 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
              id="text632"><tspan
                x="0 5.9879999 13.536"
                y="0"
-               id="tspan630"><?= $data_pengajuan['kode_surat']?></tspan></text></g></g><g
+               id="tspan630"></tspan></text></g></g><g
          id="g634"><g
            id="g636"
            clip-path="url(#clipPath640)"><text
@@ -1411,7 +1411,7 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
              id="text656"><tspan
                x="0 5.8800001 12.588"
                y="0"
-               id="tspan654">/<?= substr($data_pengajuan['tanggal_ttd'], 0, 4)?></tspan></text></g></g><g
+               id="tspan654"></tspan></text></g></g><g
          id="g658"><g
            id="g660"
            clip-path="url(#clipPath664)"><text
@@ -1579,7 +1579,7 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
              id="text960"><tspan
                x="0"
                y="0"
-               id="tspan958">9</tspan></text></g></g><g
+               id="tspan958"></tspan></text></g></g><g
          id="g962"><g
            id="g964"
            clip-path="url(#clipPath968)" /></g><g

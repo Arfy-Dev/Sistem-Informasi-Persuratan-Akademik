@@ -82,6 +82,11 @@ $routes->post('fakultas/save', 'Fakultas::save');
 $routes->post('jenissurat/save', 'JenisSurat::save');
 $routes->post('surat/save', 'Surat::save');
 $routes->post('pengajuansurat/save', 'PengajuanSurat::save');
+
+// Login
+$routes->get('login', 'Login::index');
+$routes->post('login/process', 'Login::process');
+$routes->get('logout', 'Login::logout');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

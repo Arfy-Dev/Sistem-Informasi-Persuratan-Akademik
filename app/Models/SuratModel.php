@@ -14,4 +14,9 @@ class SuratModel extends Model
     public function getAllSurat(){ 
         return $this->findAll();
      }
+
+     public function getSuratByIdPengajuan($id) {
+        return $this->where('id_pengajuan', $id)->first();
+    }
+    
 }

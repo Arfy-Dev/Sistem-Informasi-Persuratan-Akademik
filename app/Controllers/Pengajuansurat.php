@@ -73,6 +73,9 @@ class PengajuanSurat extends BaseController{
         // $nim
         $data_mahasiswa = $this->mahasiswaModel->getMahasiswaById($nim);
 
+        // nomor surat
+        $data_surat = $this->suratModel->getSuratByIdPengajuan($id_pengajuan);
+
         // Cek Prodi
         if($data_mahasiswa['id_prodi'] == "TIN"){
             $prodi = "Teknik Industri";
@@ -85,17 +88,22 @@ class PengajuanSurat extends BaseController{
         }elseif($data_mahasiswa['id_prodi'] == "MTK"){
             $prodi = "Matematika";
         }
-
+// dd($data_pengajuan['kode_surat']);
         // Cek Jenis Surat
-        if($data_pengajuan['kode_surat'] == 'SKAK'){
-            $kode_surat = "SURAT KETERANGAN AKTIF KULIAH";
-        }elseif($data_pengajuan['kode_surat'] == 'SKKB'){
-            $kode_surat = "SURAT KETERANGAN BERKELAKUAN BAIK";
-        }elseif($data_pengajuan['kode_surat'] == 'SKMK'){
-            $kode_surat = "SURAT KETERANGAN MASIH KULIAH";
-        }elseif($data_pengajuan['kode_surat'] == 'SKTB'){
-            $kode_surat = "SURAT KETERANGAN BEBAS BEASISWA";
-        }
+        switch ($data_pengajuan['kode_surat']) {
+            case 'SKAK':
+                $kode_surat = "SURAT KETERANGAN AKTIF KULIAH";
+                break;
+            case 'SKBB':
+                $kode_surat = "SURAT KETERANGAN BERKELAKUAN BAIK";
+                break;
+            case 'SKMK':
+                $kode_surat = "SURAT KETERANGAN MASIH KULIAH";
+                break;
+            case 'SKTB':
+                $kode_surat = "SURAT KETERANGAN BEBAS BEASISWA";
+                break;
+        }        
 
         $data = [
             'title' => 'Surat Keterangan Berkelakukan Baik',
@@ -103,9 +111,18 @@ class PengajuanSurat extends BaseController{
             'data_pengajuan' => $data_pengajuan,
             'prodi' => $prodi,
             'kode_surat' => $kode_surat,
+            'data_surat' => $data_surat
         ];
-        
-        return view('cetak_surat', $data);
+
+        if($data_pengajuan['kode_surat'] == 'SKAK'){
+            return view('surat/skak', $data);
+        }elseif($data_pengajuan['kode_surat'] == 'SKBB'){
+            return view('surat/skbb', $data);
+        }elseif($data_pengajuan['kode_surat'] == 'SKMK'){
+            return view('surat/skmk', $data);
+        }elseif($data_pengajuan['kode_surat'] == 'SKTB'){
+            return view('surat/sktb', $data);
+        }
    }
 
    public function kirim_surat($id_pengajuan){

@@ -191,3 +191,20 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 <?php endif?>
+
+<!-- Notifikasi berhasil login -->
+<?php if(session()->getFlashdata('pesan') == "login berhasil"):?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    Swal.fire({
+        title: "Selamat Datang!",
+        icon: "success",
+        confirmButtonText: 'OK'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            var data = '<?php session()->destroy('pesan')?>';
+        }
+    });
+});
+</script>
+<?php endif?>
