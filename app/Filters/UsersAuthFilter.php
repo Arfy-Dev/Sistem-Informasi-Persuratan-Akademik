@@ -10,9 +10,12 @@ class UsersAuthFilter implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        if(is_null(session()->get('logged_in')))
-        {
+        if(is_null(session()->get('logged_in'))){ 
+            // dd($_SESSION['login']);
             return redirect()->to('pengajuan');
+        }
+        else{
+            // return redirect()->to();
         }
 
     }
@@ -22,5 +25,6 @@ class UsersAuthFilter implements FilterInterface
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
         // Do something here
+
     }
 }

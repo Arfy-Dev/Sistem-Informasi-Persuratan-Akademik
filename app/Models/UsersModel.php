@@ -11,8 +11,4 @@ class UsersModel extends Model
     protected $returnType = "object";
     protected $useTimestamps = true;
     protected $allowedFields = ['username', 'password', 'name'];
-
-    public function getUsersByRoleAdmin($role) {
-        return $this->where('role', $role)->first();
-    }
 }

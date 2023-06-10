@@ -1333,7 +1333,7 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
              id="text550"><tspan
                x="0 8.18748 18.97644 29.54196 39.94788 50.14632 53.65752 64.542236 73.76712 84.1092 93.334084 103.8996 114.44916 125.286 135.59616 146.00208 156.91872"
                y="0"
-               id="tspan548"><?= $kode_surat?> </tspan></text></g></g><g
+               id="tspan548">SURAT KETERANGAN </tspan></text></g></g><g
          id="g552"><g
            id="g554"
            clip-path="url(#clipPath558)"><text
@@ -1342,7 +1342,7 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
              id="text562"><tspan
                x="0 10.42188 19.646761 30.21228 41.097 50.369759 59.163719 69.681358 80.566078 91.355042 101.8248 112.66164 116.109 126.53088 136.9368 142.6026"
                y="0"
-               id="tspan560"></tspan></text></g></g><g
+               id="tspan560">BERKELAKUAN BAIK</tspan></text></g></g><g
          id="g564"><g
            id="g566"
            clip-path="url(#clipPath570)" /></g><path
@@ -1507,7 +1507,7 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
              id="text840"><tspan
                x="0 3.47328"
                y="0"
-               id="tspan838">: <?= $data_mahasiswa['nama']?> </tspan></text></g></g><g
+               id="tspan838">: <?= $data_mahasiswa['nama']?></tspan></text></g></g><g
          id="g842"><g
            id="g844"
            clip-path="url(#clipPath848)"><text
@@ -1546,7 +1546,7 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
              id="text908"><tspan
                x="0"
                y="0"
-               id="tspan906">:<?= $data_mahasiswa['nim']?></tspan></text></g></g><g
+               id="tspan906">: <?= $data_mahasiswa['nim']?></tspan></text></g></g><g
          id="g910"><g
            id="g912"
            clip-path="url(#clipPath916)" /></g><g
@@ -1594,7 +1594,7 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
              id="text988"><tspan
                x="0 7.6852798 14.00976 24.83136 32.037121 38.361599 42.819839 49.170238 56.855518 63.257759 66.8088 69.465599 72.316803 79.276321 85.639679 92.832481 96.435364 101.8008 113.29632 116.79552 125.28432 132.6456 138.97008 145.82591 152.15041 159.38208 166.47121 172.79568 178.21297 185.40576 188.25696 194.60736"
                y="0"
-               id="tspan986">Tempat/Tgl. Lahir : <?= $data_mahasiswa['tempat_lahir']?>/<?= $data_mahasiswa['tanggal_lahir']?></tspan></text></g></g><g
+               id="tspan986">Tempat/Tgl. Lahir :<?= $data_mahasiswa['tempat_lahir']?>/<?= date("d M Y", strtotime($data_mahasiswa['tanggal_lahir']))?> </tspan></text></g></g><g
          id="g990"><g
            id="g992"
            clip-path="url(#clipPath996)"><text
@@ -1654,7 +1654,7 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
              id="text1088"><tspan
                x="0"
                y="0"
-               id="tspan1086">:</tspan></text></g></g><g
+               id="tspan1086">: <?= $data_mahasiswa['semester']?></tspan></text></g></g><g
          id="g1090"><g
            id="g1092"
            clip-path="url(#clipPath1096)" /></g><g
@@ -1666,7 +1666,7 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
              id="text1108"><tspan
                x="0 4.1990399 12.10464 14.95584 20.010241 27.552959 38.335678 45.658081 51.982559 56.5704"
                y="0"
-               id="tspan1106"><?= $data_mahasiswa['semester']?></tspan></text></g></g><g
+               id="tspan1106"></tspan></text></g></g><g
          id="g1110"><g
            id="g1112"
            clip-path="url(#clipPath1116)" /></g><g
@@ -1696,7 +1696,7 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
              id="text1164"><tspan
                x="0"
                y="0"
-               id="tspan1162">:<?= $prodi?></tspan></text></g></g><g
+               id="tspan1162">: <?= $data_mahasiswa['id_prodi']?></tspan></text></g></g><g
          id="g1166"><g
            id="g1168"
            clip-path="url(#clipPath1172)" /></g><g
@@ -1918,7 +1918,7 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
              id="text1564"><tspan
                x="0 7.3224001 13.64688 20.51568 26.84016 34.071838 41.160961 47.485439 52.902721"
                y="0"
-               id="tspan1562">Pekanbaru, <?= $data_pengajuan['tanggal_ttd']?></tspan></text></g></g><g
+               id="tspan1562">Pekanbaru, <?= date("d M Y", strtotime($data_pengajuan['tanggal_ttd']))?></tspan></text></g></g><g
          id="g1566"><g
            id="g1568"
            clip-path="url(#clipPath1572)"><text
@@ -2113,4 +2113,30 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
 </div>
 
 </body>
+<script>
+  // Menentukan waktu penundaan dalam milidetik sebelum mengunduh halaman
+var waktuPenundaan = 1000; // Contoh: 5 detik
+
+// Fungsi untuk mengunduh halaman
+function unduhHalaman() {
+  // Mendapatkan URL halaman saat ini
+  var urlHalaman = window.location.href;
+
+  // Membuat elemen anchor baru
+  var anchor = document.createElement('a');
+  anchor.href = urlHalaman;
+
+  // Menetapkan atribut unduhan untuk anchor
+  anchor.setAttribute('download', '');
+
+  // Simulasi klik pada anchor untuk mengunduh halaman
+  anchor.click();
+}
+
+// Menunggu untuk waktu penundaan sebelum memanggil fungsi unduhHalaman
+setTimeout(unduhHalaman, waktuPenundaan);
+
+</script>
 </html>
+
+

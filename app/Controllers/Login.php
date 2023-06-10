@@ -35,6 +35,8 @@ class Login extends BaseController
                     'name' => $dataUser->name,
                     'logged_in' => TRUE
                 ]);
+                $_SESSION['login'] = $dataUser;
+
                 session()->setFlashdata('pesan', 'login berhasil');
                 return redirect()->to('mahasiswa');
             } else {

@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
         confirmButtonText: 'OK'
     }).then((result) => {
         if (result.isConfirmed) {
-            var data = '<?php session()->destroy('pesan')?>';
+            var data = '<?php session()->remove('pesan')?>';
             // window.location.href = "/mahasiswa";
         }
     });
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         confirmButtonText: 'OK'
     }).then((result) => {
         if (result.isConfirmed) {
-            var data = '<?php session()->destroy('pesan')?>';
+            var data = '<?php session()->remove('pesan')?>';
         }
     });
 });
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
         confirmButtonText: 'OK'
     }).then((result) => {
         if (result.isConfirmed) {
-            var data = '<?php session()->destroy('pesan')?>';
+            var data = '<?php session()->remove('pesan')?>';
         }
     });
 });
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
         confirmButtonText: 'OK'
     }).then((result) => {
         if (result.isConfirmed) {
-            var data = '<?php session()->destroy('pesan')?>';
+            var data = '<?php session()->remove('pesan')?>';
         }
     });
 });
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
         confirmButtonText: 'OK'
     }).then((result) => {
         if (result.isConfirmed) {
-            var data = '<?php session()->destroy('pesan')?>';
+            var data = '<?php session()->remove('pesan')?>';
         }
     });
 });
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
         confirmButtonText: 'OK'
     }).then((result) => {
         if (result.isConfirmed) {
-            var data = '<?php session()->destroy('pesan')?>';
+            var data = '<?php session()->remove('pesan')?>';
         }
     });
 });
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function() {
         confirmButtonText: 'OK'
     }).then((result) => {
         if (result.isConfirmed) {
-            var data = '<?php session()->destroy('pesan')?>';
+            var data = '<?php session()->remove('pesan')?>';
         }
     });
 });
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function() {
         confirmButtonText: 'OK'
     }).then((result) => {
         if (result.isConfirmed) {
-            var data = '<?php session()->destroy('pesan')?>';
+            var data = '<?php session()->remove('pesan')?>';
         }
     });
 });
@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function() {
         confirmButtonText: 'OK'
     }).then((result) => {
         if (result.isConfirmed) {
-            var data = '<?php session()->destroy('pesan')?>';
+            var data = '<?php session()->remove('pesan')?>';
         }
     });
 });
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function() {
         confirmButtonText: 'OK'
     }).then((result) => {
         if (result.isConfirmed) {
-            var data = '<?php session()->destroy('pesan')?>';
+            var data = '<?php session()->remove('pesan')?>';
         }
     });
 });
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function() {
         confirmButtonText: 'OK'
     }).then((result) => {
         if (result.isConfirmed) {
-            var data = '<?php session()->destroy('pesan')?>';
+            var data = '<?php session()->remove('pesan')?>';
         }
     });
 });
@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function() {
         confirmButtonText: 'OK'
     }).then((result) => {
         if (result.isConfirmed) {
-            var data = '<?php session()->destroy('pesan')?>';
+            var data = '<?php session()->remove('pesan')?>';
         }
     });
 });
