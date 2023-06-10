@@ -14,4 +14,8 @@ class OrangTuaModel extends Model
     public function getAllOrangTua(){ 
         return $this->findAll();
      }
+
+     public function getOrangTuaByNim($id) {
+        return $this->where('nim', $id)->first();
+    }
 }

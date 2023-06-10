@@ -5,19 +5,22 @@ namespace App\Controllers;
 use App\Models\PengajuanSuratModel;
 use App\Models\MahasiswaModel;
 use App\Models\SuratModel;
+use App\Models\OrangTuaModel;
 
 class PengajuanSurat extends BaseController{
 
     protected PengajuanSuratModel $pengajuanSuratModel;
     protected MahasiswaModel $mahasiswaModel;
     protected SuratModel $suratModel;
+    protected OrangTuaModel $orangtuaModel;
     protected $nomorSurat;
-    protected $temp;
+    // protected $temp;
     
     public function __construct(){
        $this->pengajuanSuratModel = new PengajuanSuratModel();
        $this->mahasiswaModel = new MahasiswaModel();
        $this->suratModel = new SuratModel();
+       $this->orangtuaModel = new OrangTuaModel();
     }
     
     public function index(){
@@ -76,6 +79,9 @@ class PengajuanSurat extends BaseController{
         // nomor surat
         $data_surat = $this->suratModel->getSuratByIdPengajuan($id_pengajuan);
 
+        // id orangtua
+        $data_ortu = $this->orangtuaModel->getOrangTuaByNim($nim);
+
         // Cek Prodi
         if($data_mahasiswa['id_prodi'] == "TIN"){
             $prodi = "Teknik Industri";
@@ -111,7 +117,8 @@ class PengajuanSurat extends BaseController{
             'data_pengajuan' => $data_pengajuan,
             'prodi' => $prodi,
             'kode_surat' => $kode_surat,
-            'data_surat' => $data_surat
+            'data_surat' => $data_surat,
+            'data_ortu' => $data_ortu
         ];
 
         if($data_pengajuan['kode_surat'] == 'SKAK'){
