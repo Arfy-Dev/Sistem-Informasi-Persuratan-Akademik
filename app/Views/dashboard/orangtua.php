@@ -170,10 +170,10 @@
                                                                     <label for="id_orangtua" class="harus">ID Orang Tua</label>
                                                                     <input disabled value="<?= $result['id_orangtua']?>"
                                                                         id="
-                                                                        id_orangtua" type="number" required
+                                                                        id_orangtua" type="text" required
                                                                         minlength="11" maxlength="11"
                                                                         class="form-control "
-                                                                        onkeydown="return /[0-9]/.test(event.key) || event.key === 'Backspace';"
+                                                                      
                                                                         autofocus="" aria-describedby="
                                                                     id_orangtuaHelp" name="id_orangtua"
                                                                         data-form-type="other">
@@ -221,7 +221,7 @@
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="nim" class="harus">NIM</label>
-                                                                    <input disabled value="<?= $result['nim']?>"
+                                                                    <input  value="<?= $result['nim']?>"
                                                                         id="
                                                                         nim" type="number" required
                                                                         minlength="11" maxlength="11"

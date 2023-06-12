@@ -9,7 +9,6 @@
                 <h3 class="mb_25">Pengajuan Surat</h3>
             </div>
         </div>
-
         <div class="income_servay">
             <table id="tabel-data" class="table table-striped table-bordered" width="100%" cellspacing="0">
                 <thead>

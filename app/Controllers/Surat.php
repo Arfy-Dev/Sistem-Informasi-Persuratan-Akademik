@@ -80,6 +80,18 @@ public function save(){
    }
 }    
 //  End Copy 1
+
+   public function laporan(){
+      // Mengambil seluruh data surat
+      $data_surat = $this->suratModel->getAllSurat();
+      $data_surat = $this->suratModel->getAllSurat();
+      $data = [
+         'title' => 'Data Surat',
+         'data_surat' => $data_surat
+     ];
+
+     return view('laporan/arsip', $data);
+   }
     
 
 }

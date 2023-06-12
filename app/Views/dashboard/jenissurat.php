@@ -1,5 +1,6 @@
 <?= $this->extend('layout/interface_admin');?>
 <?= $this->section('content');?>
+<?= $this->include('asset/notification')?>
 
 <div class="col-lg-12 col-xl-12">
     <div class="white_box mb_30 " style="position: relative;">
@@ -33,11 +34,10 @@
                                                     method="post" id="form" novalidate="novalidate">
                                                     <div class="form-group">
                                                         <label for="kode_surat" class="harus">Kode Surat</label>
-                                                        <input id="kode_surat" type="text" required
+                                                        <input id="kode_surat" name="kode_surat" type="text" required
                                                                 class="form-control " autofocus=""
                                                                 aria-describedby=" kode_suratHelp"
-                                                                onkeydown="return /[0-9]/.test(event.key) || event.key === 'Backspace';"
-                                                                data-form-type="other">
+                                                                                                                                data-form-type="other">
                                                         <div class="invalid-feedback">
                                                             Harap isi ID Kode Surat!
                                                         </div>
@@ -125,7 +125,7 @@
                                                                         Fakultas</label>
                                                                     <input disabled value="<?= $result['kode_surat']?>"
                                                                         id="
-                                                                                kode_surat" type="number" required
+                                                                                kode_surat" type="text" required
                                                                         minlength="11" maxlength="11"
                                                                         class="form-control "
                                                                         onkeydown="return /[0-9]/.test(event.key) || event.key === 'Backspace';"
@@ -161,7 +161,7 @@
                                 </div>
                             </div>
                     
-                            <a href="/jenis_surat/delete/<?= $result['kode_surat']?>" " class="btn btn-danger"
+                            <a href="/jenissurat/delete/<?= $result['kode_surat']?>" class="btn btn-danger"
                                 style="font-size: 12px; padding: 5px 10px; color:white; border-radius: 3px;"
                                 onclick="sweetAlert(event, '<?= $result['kode_surat']?>')">Hapus</a>
                             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -170,7 +170,7 @@
                                 event.preventDefault();
                                 Swal.fire({
                                     title: 'Hapus',
-                                    text: 'Apakah Anda yakin ingin menghapus data <?= $result['kode_surat']?>?',
+                                    text: 'Apakah Anda yakin ingin menghapus data ini?',
                                     icon: 'warning',
                                     showCancelButton: true,
                                     confirmButtonText: 'Ya',
@@ -178,7 +178,7 @@
                                 }).then((result) => {
                                     if (result.isConfirmed) {
                                         // Arahkan pengguna ke halaman delete
-                                        window.location.href = "/jenissurat/delete/" + kode_surat;
+                                        window.location.href = "jenissurat/delete/<?= $result['kode_surat']?>";
                                     }
                                 });
                             }

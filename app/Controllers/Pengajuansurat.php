@@ -88,7 +88,7 @@ class PengajuanSurat extends BaseController{
         }elseif($data_mahasiswa['id_prodi'] == "SIF"){
             $prodi = "Sistem Informasi";
         }elseif($data_mahasiswa['id_prodi'] == "TIF"){
-            $prodi = "Teknik Informastika";
+            $prodi = "Teknik Informatika";
         }elseif($data_mahasiswa['id_prodi'] == "TE"){
             $prodi = "Teknik Elektro";
         }elseif($data_mahasiswa['id_prodi'] == "MTK"){

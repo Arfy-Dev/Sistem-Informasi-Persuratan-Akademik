@@ -87,6 +87,11 @@ $routes->post('pengajuansurat/save', 'PengajuanSurat::save');
 $routes->get('login', 'Login::index');
 $routes->post('login/process', 'Login::process');
 $routes->get('logout', 'Login::logout');
+$routes->get('laporan/arsip', 'Surat::laporan');
+
+// Laporan
+// $routes->get('laporan/arsip)', 'Surat::laporan');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

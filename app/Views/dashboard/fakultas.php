@@ -34,10 +34,9 @@
                                                     method="post" id="form" novalidate="novalidate">
                                                     <div class="form-group">
                                                         <label for="id_fakultas" class="harus">ID Fakultas</label>
-                                                        <input id="id_fakultas" type="text" required
+                                                        <input id="id_fakultas" name="id_fakultas" type="text" required
                                                                 class="form-control " autofocus=""
                                                                 aria-describedby=" id_pengajuanHelp"
-                                                                onkeydown="return /[0-9]/.test(event.key) || event.key === 'Backspace';"
                                                                 data-form-type="other">
                                                         <div class="invalid-feedback">
                                                             Harap isi ID Fakultas!

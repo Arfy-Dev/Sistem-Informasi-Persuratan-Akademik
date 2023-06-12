@@ -702,7 +702,7 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
            id="text452"><tspan
              x="0"
              y="0"
-             id="tspan450"> :   <?= $data_mahasiswa['id_prodi']?> / <?= $data_mahasiswa['semester']?></tspan></text><text
+             id="tspan450"> :   <?= $prodi?> / <?= $data_mahasiswa['semester']?></tspan></text><text
            transform="translate(311.27338,16.470053)"
            style="font-variant:normal;font-weight:normal;font-size:17.3333px;font-family:Cambria;-inkscape-font-specification:Cambria;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
            id="text456"><tspan

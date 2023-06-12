@@ -429,7 +429,7 @@
                                             <option value="TIN">S1 - Teknik Industri</option>
                                             <option value="TIF">S1 - Teknik Informatika</option>
                                             <option value="MTK">S1 - Matematika</option>
-                                            <option value="TEL">S1 - Teknik Elektro</option>
+                                            <option value="TE">S1 - Teknik Elektro</option>
                                         </select>
                                         <div class="invalid-feedback">
                                             Harap isi program studi Anda!

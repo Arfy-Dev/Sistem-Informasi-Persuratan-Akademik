@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function() {
     Swal.fire({
         title: "Data Sudah Tersedia",
-        text: "Silahkan cek NIM kembali",
+        text: "Silahkan cek ID kembali",
         icon: "warning",
         confirmButtonText: 'OK'
     }).then((result) => {

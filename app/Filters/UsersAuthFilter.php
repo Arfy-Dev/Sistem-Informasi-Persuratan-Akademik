@@ -12,7 +12,7 @@ class UsersAuthFilter implements FilterInterface
     {
         if(is_null(session()->get('logged_in'))){ 
             // dd($_SESSION['login']);
-            return redirect()->to('pengajuan');
+            return redirect()->to('/');
         }
         else{
             // return redirect()->to();
