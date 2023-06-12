@@ -42,10 +42,12 @@ class Dashboard extends BaseController
     public function mahasiswa(){
 
         $result = $this->mahasiswaModel->getAllMahasiswa();
+        $data_prodi = $this->prodiModel->getAllProdi();
         
         $data = [
             'title' => 'Data Mahasiswa',
-            'data_mahasiswa' => $result
+            'data_mahasiswa' => $result,
+            'data_prodi' => $data_prodi
         ];
 
         return view('dashboard/mahasiswa', $data);
@@ -55,10 +57,12 @@ class Dashboard extends BaseController
     public function orangtua(){
 
         $result = $this->orangtuaModel->getAllOrangTua();
+        $data_mahasiswa = $this->mahasiswaModel->getAllMahasiswa();
         
         $data = [
             'title' => 'Data Orang Tua',
-            'data_orang_tua' => $result
+            'data_orang_tua' => $result,
+            'data_mahasiswa' => $data_mahasiswa,
         ];
 
         return view('dashboard/orangtua', $data);

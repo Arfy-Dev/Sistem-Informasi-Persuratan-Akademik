@@ -35,9 +35,8 @@
                                                     <div class="form-group">
                                                         <label for="id_fakultas" class="harus">ID Fakultas</label>
                                                         <input id="id_fakultas" name="id_fakultas" type="text" required
-                                                                class="form-control " autofocus=""
-                                                                aria-describedby=" id_pengajuanHelp"
-                                                                data-form-type="other">
+                                                            class="form-control " autofocus=""
+                                                            aria-describedby=" id_pengajuanHelp" data-form-type="other">
                                                         <div class="invalid-feedback">
                                                             Harap isi ID Fakultas!
                                                         </div>
@@ -137,30 +136,28 @@
                                                                         Fakultas</label>
                                                                     <input disabled value="<?= $result['id_fakultas']?>"
                                                                         id="
-                                                                                id_fakultas" type="number" required
-                                                                        minlength="11" maxlength="11"
-                                                                        class="form-control "
-                                                                        onkeydown="return /[0-9]/.test(event.key) || event.key === 'Backspace';"
-                                                                        autofocus="" aria-describedby="
+                                                                                id_fakultas" type="text" required
+                                                                        class="form-control " autofocus=""
+                                                                        aria-describedby="
                                                                     id_fakultasHelp" name="id_fakultas"
                                                                         data-form-type="other">
                                                                     <div class="invalid-feedback">
                                                                         Harap isi ID Fakultas!
                                                                     </div>
                                                                 </div>
-                                                                    <div class="form-group">
-                                                                        <label for="nama" class="harus">Nama</label>
-                                                                        <input value="<?= $result['nama']?>" id="nama"
-                                                                            required type="text" class="form-control "
-                                                                            autofocus="" aria-describedby="namaHelp"
-                                                                            name="nama"
-                                                                            onkeydown="return /[A-Z, a-z]/.test(event.key)"
-                                                                            data-form-type="other">
-                                                                        <div class="invalid-feedback">
-                                                                            Harap isi nama Anda!
-                                                                        </div>
+                                                                <div class="form-group">
+                                                                    <label for="nama" class="harus">Nama</label>
+                                                                    <input value="<?= $result['nama']?>" id="nama"
+                                                                        required type="text" class="form-control "
+                                                                        autofocus="" aria-describedby="namaHelp"
+                                                                        name="nama"
+                                                                        onkeydown="return /[A-Z, a-z]/.test(event.key)"
+                                                                        data-form-type="other">
+                                                                    <div class="invalid-feedback">
+                                                                        Harap isi nama Anda!
                                                                     </div>
-                                                        
+                                                                </div>
+
                                                                 <div class="form-group">
                                                                     <label for="alamat_fakultas"
                                                                         class="harus">Alamat</label>
@@ -168,7 +165,6 @@
                                                                         value="oke" name="alamat_fakultas" type="text"
                                                                         required class="form-control " autofocus=""
                                                                         aria-describedby=" alamat_fakultasHelp"
-                                                                        onkeydown="return /[A-Z, a-z]/.test(event.key)"
                                                                         data-form-type="other">
                                                                     <div class="invalid-feedback">
                                                                         Harap isi alamat Anda!

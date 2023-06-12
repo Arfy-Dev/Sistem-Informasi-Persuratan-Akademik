@@ -4,21 +4,27 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\OrangTuaModel;
+use App\Models\MahasiswaModel;
 
 class OrangTua extends BaseController{
 
     protected OrangTuaModel $orangtuaModel;
+    protected MahasiswaModel $mahasiswaModel;
 
     public function __construct(){
        $this->orangtuaModel = new OrangTuaModel();
+       $this->mahasiswaModel = new MahasiswaModel();
     }
     
     
    // Menampilkan view tabel OrangTua  
     public function index(){
-        
+       $data_mahasiswa = $this->mahasiswaModel->getAllMahasiswa();
+       dd($data_mahasiswa);
+       
         $data = [
-            'title' => 'Data Orang Tua'
+            'title' => 'Data Orang Tua',
+            'data_mahasiswa' => $data_mahasiswa
         ];
 
         return view('orangtua', $data);

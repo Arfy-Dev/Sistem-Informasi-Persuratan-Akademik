@@ -30,7 +30,7 @@ class Filters extends BaseConfig
 		'before' => [
 			'usersAuth' => [
 				'except' => [
-          '/*',
+          '/',
 					'login/*',
 					'logout/*',
 					'pengajuan*',

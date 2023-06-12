@@ -36,6 +36,7 @@
                                                         <label for="id_orangtua" class="harus">ID Orang Tua</label>
                                                         <input id="id_orangtua" type="text" required
                                                             class="form-control " autofocus=""
+                                                            onkeydown="return /[0-9]/.test(event.key) || event.key === 'Backspace';"
                                                             aria-describedby="id_orangtuaHelp" name="id_orangtua"
                                                             data-form-type="other">
                                                         <div class="invalid-feedback">
@@ -44,8 +45,9 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="nama_orangtua" class="harus">Nama</label>
-                                                        <input id="nama_orangtua"  type="text" class="form-control "
-                                                            autofocus="" aria-describedby="nama_orangtuaHelp" name="nama_orangtua"
+                                                        <input id="nama_orangtua" type="text" class="form-control "
+                                                            autofocus="" aria-describedby="nama_orangtuaHelp"
+                                                            name="nama_orangtua"
                                                             onkeydown="return /[A-Z, a-z]/.test(event.key)"
                                                             data-form-type="other">
                                                         <div class="invalid-feedback">
@@ -56,6 +58,7 @@
                                                         <label for="pekerjaan_orangtua" class="harus">Pekerjaan</label>
                                                         <input name="pekerjaan_orangtua" type="text" required
                                                             class="form-control " autofocus=""
+                                                            onkeydown="return /[A-Z, a-z]/.test(event.key)"
                                                             aria-describedby=" pekerjaan_orangtuaHelp"
                                                             data-form-type="other">
                                                         <div class="invalid-feedback">
@@ -73,17 +76,22 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="nim" class="harus">NIM</label>
-                                                        <input value="" id="
-                                                            nim" type="number" required
-                                                            minlength="11" maxlength="11" class="form-control "
-                                                            onkeydown="return /[0-9]/.test(event.key) || event.key === 'Backspace';"
-                                                            autofocus="" aria-describedby="
-                                            nimHelp" name="nim" data-form-type="other">
+                                                        <label for="nim" class="harus">Nama Mahasiswa</label>
+                                                        <select name="nim" required
+                                                            class="form-control chosen select2-hidden-accessible"
+                                                            data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                                            <option value="" data-select2-id="3">Pilih Mahasiswa
+                                                            </option>
+                                                            <?php foreach($data_mahasiswa as $result):?>
+                                                            <option value="<?= $result['nim']?>">
+                                                                <?= $result['nama']?>
+                                                            </option>
+                                                            <?php endforeach?>
+                                                        </select>
                                                         <div class="invalid-feedback">
-                                                            Harap isi NIM Anda!
+                                                            Harap isi NIM!
                                                         </div>
-                                                     </div>
+                                                    </div>
                                                     <button type="submit" class="btn btn-primary ">
                                                         Tambah
                                                     </button>
@@ -121,7 +129,7 @@
                         <td><?= $result['pekerjaan_orangtua']?></td>
                         <td><?= $result['alamat_orangtua']?></td>
                         <td><?= $result['nim']?></td>
-                        
+
                         <!-- Start Copy 4 -->
                         <td><button type="button" class="btn btn-warning"
                                 style="font-size: 12px; color:white; padding: 5px 10px;" data-toggle="modal"
@@ -146,45 +154,41 @@
 
                                                     <div class="card-body">
                                                         <div>
-                                                            <form action="<?='/orangtua/update/'. $result['id_orangtua']?>"
+                                                            <form
+                                                                action="<?='/orangtua/update/'. $result['id_orangtua']?>"
                                                                 class="needs-validation" method="post"
                                                                 id="form<?= $result['id_orangtua']?>"
                                                                 novalidate="novalidate">
                                                                 <div class="form-group">
-                                                                    <input id="id_orangtua autorefresh" name="id_orangtua"
-                                                                        type="hidden" class="form-control " autofocus=""
+                                                                    <input id="id_orangtua autorefresh"
+                                                                        name="id_orangtua" type="hidden"
+                                                                        class="form-control " autofocus=""
                                                                         aria-describedby="id_orangtuaHelp"
                                                                         value="<?= $result['id_orangtua']?>"
                                                                         data-form-type="other">
                                                                 </div>
-                                                                
+
                                                                 <div class="form-group">
-                                                                    <input id="nim autorefresh" name="nim" type="hidden"
-                                                                        class="form-control " autofocus=""
-                                                                        aria-describedby="nimHelp"
-                                                                        value="<?= $result['nim']?>"
-                                                                        data-form-type="other">
-                                                                </div>
-                                    
-                                                                <div class="form-group">
-                                                                    <label for="id_orangtua" class="harus">ID Orang Tua</label>
+                                                                    <label for="id_orangtua" class="harus">ID Orang
+                                                                        Tua</label>
                                                                     <input disabled value="<?= $result['id_orangtua']?>"
                                                                         id="
                                                                         id_orangtua" type="text" required
                                                                         minlength="11" maxlength="11"
-                                                                        class="form-control "
-                                                                      
-                                                                        autofocus="" aria-describedby="
+                                                                        class="form-control " autofocus=""
+                                                                        aria-describedby="
                                                                     id_orangtuaHelp" name="id_orangtua"
                                                                         data-form-type="other">
                                                                     <div class="invalid-feedback">
                                                                         Harap isi ID Orang Tua!
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label for="nama_orangtua" class="harus">Nama</label>
-                                                                        <input value="<?= $result['nama_orangtua']?>" id="nama_orangtua"
-                                                                            required type="text" class="form-control "
-                                                                            autofocus="" aria-describedby="nama_orangtuaHelp"
+                                                                        <label for="nama_orangtua"
+                                                                            class="harus">Nama</label>
+                                                                        <input value="<?= $result['nama_orangtua']?>"
+                                                                            id="nama_orangtua" required type="text"
+                                                                            class="form-control " autofocus=""
+                                                                            aria-describedby="nama_orangtuaHelp"
                                                                             name="nama_orangtua"
                                                                             onkeydown="return /[A-Z, a-z]/.test(event.key)"
                                                                             data-form-type="other">
@@ -195,10 +199,10 @@
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="pekerjaan_orangtua"
-                                                                        class="harus">Alamat</label>
+                                                                        class="harus">Pekerjaan</label>
                                                                     <input value="<?= $result['pekerjaan_orangtua']?>"
-                                                                        value="oke" name="pekerjaan_orangtua" type="text"
-                                                                        required class="form-control " autofocus=""
+                                                                        name="pekerjaan_orangtua" type="text" required
+                                                                        class="form-control " autofocus=""
                                                                         aria-describedby=" pekerjaan_orangtuaHelp"
                                                                         onkeydown="return /[A-Z, a-z]/.test(event.key)"
                                                                         data-form-type="other">
@@ -210,25 +214,30 @@
                                                                     <label for="alamat_orangtua"
                                                                         class="harus">Alamat</label>
                                                                     <input value="<?= $result['alamat_orangtua']?>"
-                                                                        value="oke" name="alamat_orangtua" type="text"
-                                                                        required class="form-control " autofocus=""
+                                                                        name="alamat_orangtua" type="text" required
+                                                                        class="form-control " autofocus=""
                                                                         aria-describedby=" alamat_orangtuaHelp"
-                                                                        onkeydown="return /[A-Z, a-z]/.test(event.key)"
                                                                         data-form-type="other">
                                                                     <div class="invalid-feedback">
                                                                         Harap isi alamat orang tua Anda!
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="nim" class="harus">NIM</label>
-                                                                    <input  value="<?= $result['nim']?>"
-                                                                        id="
-                                                                        nim" type="number" required
-                                                                        minlength="11" maxlength="11"
-                                                                        class="form-control "
-                                                                        onkeydown="return /[0-9]/.test(event.key) || event.key === 'Backspace';"
-                                                                        autofocus="" aria-describedby="
-                                            nimHelp" name="nim" data-form-type="other">
+                                                                    <label for="nim" class="harus">Nama
+                                                                        Mahasiswa</label>
+                                                                    <select name="nim" required
+                                                                        class="form-control chosen select2-hidden-accessible"
+                                                                        data-select2-id="1" tabindex="-1"
+                                                                        aria-hidden="true">
+                                                                        <option value="<?= $result['nim']?>"
+                                                                            data-select2-id="3"><?= $result['nim']?>
+                                                                        </option>
+                                                                        <?php foreach($data_mahasiswa as $data):?>
+                                                                        <option value="<?= $data['nim']?>">
+                                                                            <?= $data['nama']?>
+                                                                        </option>
+                                                                        <?php endforeach?>
+                                                                    </select>
                                                                     <div class="invalid-feedback">
                                                                         Harap isi NIM Anda!
                                                                     </div>

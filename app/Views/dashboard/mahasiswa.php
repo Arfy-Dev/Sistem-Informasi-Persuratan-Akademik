@@ -110,9 +110,7 @@
                                                         <label for="alamat_mhs" class="harus">Alamat</label>
                                                         <input name="alamat_mhs" type="text" required
                                                             class="form-control " autofocus=""
-                                                            aria-describedby=" alamat_mhsHelp"
-                                                            onkeydown="return /[A-Z, a-z]/.test(event.key)"
-                                                            data-form-type="other">
+                                                            aria-describedby=" alamat_mhsHelp" data-form-type="other">
                                                         <div class="invalid-feedback">
                                                             Harap isi alamat Anda!
                                                         </div>
@@ -123,11 +121,11 @@
                                                             class="form-control chosen select2-hidden-accessible"
                                                             data-select2-id="1" tabindex="-1" aria-hidden="true">
                                                             <option value="" data-select2-id="3">Pilih Prodi</option>
-                                                            <option value="SIF">S1 - Sistem Informasi</option>
-                                                            <option value="TIN">S1 - Teknik Industri</option>
-                                                            <option value="TIF">S1 - Teknik Informatika</option>
-                                                            <option value="MTK">S1 - Matematika</option>
-                                                            <option value="TEL">S1 - Teknik Elektro</option>
+                                                            <?php foreach($data_prodi as $result):?>
+                                                            <option value="<?= $result['id_prodi']?>">
+                                                                <?= $result['nama']?>
+                                                            </option>
+                                                            <?php endforeach?>
                                                         </select>
                                                         <div class="invalid-feedback">
                                                             Harap isi program studi Anda!
@@ -307,7 +305,6 @@
                                                                         value="oke" name="alamat_mhs" type="text"
                                                                         required class="form-control " autofocus=""
                                                                         aria-describedby=" alamat_mhsHelp"
-                                                                        onkeydown="return /[A-Z, a-z]/.test(event.key)"
                                                                         data-form-type="other">
                                                                     <div class="invalid-feedback">
                                                                         Harap isi alamat Anda!
