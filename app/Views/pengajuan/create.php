@@ -125,11 +125,11 @@
                                             class="form-control chosen select2-hidden-accessible" data-select2-id="1"
                                             tabindex="-1" aria-hidden="true">
                                             <option value="" data-select2-id="3">Pilih Prodi</option>
-                                            <option value="SIF">S1 - Sistem Informasi</option>
-                                            <option value="TIN">S1 - Teknik Industri</option>
-                                            <option value="TIF">S1 - Teknik Informatika</option>
-                                            <option value="MTK">S1 - Matematika</option>
-                                            <option value="TEL">S1 - Teknik Elektro</option>
+                                            <?php foreach(session()->get('prodi') as $result):?>
+                                            <option value="<?= $result['id_prodi']?>">
+                                                <?= $result['nama']?>
+                                            </option>
+                                            <?php endforeach?>
                                         </select>
                                         <div class="invalid-feedback">
                                             Harap isi program studi Anda!
@@ -275,11 +275,11 @@
                                             class="form-control chosen select2-hidden-accessible" data-select2-id="1"
                                             tabindex="-1" aria-hidden="true">
                                             <option value="" data-select2-id="3">Pilih Prodi</option>
-                                            <option value="SIF">S1 - Sistem Informasi</option>
-                                            <option value="TIN">S1 - Teknik Industri</option>
-                                            <option value="TIF">S1 - Teknik Informatika</option>
-                                            <option value="MTK">S1 - Matematika</option>
-                                            <option value="TEL">S1 - Teknik Elektro</option>
+                                            <?php foreach(session()->get('prodi') as $result):?>
+                                            <option value="<?= $result['id_prodi']?>">
+                                                <?= $result['nama']?>
+                                            </option>
+                                            <?php endforeach?>
                                         </select>
                                         <div class="invalid-feedback">
                                             Harap isi program studi Anda!
@@ -425,11 +425,11 @@
                                             class="form-control chosen select2-hidden-accessible" data-select2-id="1"
                                             tabindex="-1" aria-hidden="true">
                                             <option value="" data-select2-id="3">Pilih Prodi</option>
-                                            <option value="SIF">S1 - Sistem Informasi</option>
-                                            <option value="TIN">S1 - Teknik Industri</option>
-                                            <option value="TIF">S1 - Teknik Informatika</option>
-                                            <option value="MTK">S1 - Matematika</option>
-                                            <option value="TE">S1 - Teknik Elektro</option>
+                                            <?php foreach(session()->get('prodi') as $result):?>
+                                            <option value="<?= $result['id_prodi']?>">
+                                                <?= $result['nama']?>
+                                            </option>
+                                            <?php endforeach?>
                                         </select>
                                         <div class="invalid-feedback">
                                             Harap isi program studi Anda!
@@ -616,11 +616,12 @@
                                             class="form-control chosen select2-hidden-accessible" data-select2-id="1"
                                             tabindex="-1" aria-hidden="true">
                                             <option value="" data-select2-id="3">Pilih Prodi</option>
-                                            <option value="SIF">S1 - Sistem Informasi</option>
-                                            <option value="TIN">S1 - Teknik Industri</option>
-                                            <option value="TIF">S1 - Teknik Informatika</option>
-                                            <option value="MTK">S1 - Matematika</option>
-                                            <option value="TEL">S1 - Teknik Elektro</option>
+
+                                            <?php foreach(session()->get('prodi') as $result):?>
+                                            <option value="<?= $result['id_prodi']?>">
+                                                <?= $result['nama']?>
+                                            </option>
+                                            <?php endforeach?>
                                         </select>
                                         <div class="invalid-feedback">
                                             Harap isi program studi Anda!

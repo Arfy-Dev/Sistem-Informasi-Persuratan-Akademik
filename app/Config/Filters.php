@@ -35,7 +35,8 @@ class Filters extends BaseConfig
 					'logout/*',
 					'pengajuan*',
 					'pengajuan/save*',
-					'lacak*'
+					'lacak*',
+          'pengumuman'
 				]
 			]
 		],

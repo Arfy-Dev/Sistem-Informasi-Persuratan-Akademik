@@ -116,10 +116,10 @@
                                 <img src="/img/profile.png.jpg" alt="#">
                                 <div class="profile_info_iner">
                                     <p>Super Admin</p>
-                                    <h5>Ahmad Dhani</h5>
+                                    <h5></h5>
                                     <div class="profile_info_details">
-                                        <a href="#">My Profile <i class="ti-user"></i></a>
-                                        <a href="#">Settings <i class="ti-settings"></i></a>
+                                        <!-- <a href="#">My Profile <i class="ti-user"></i></a> -->
+                                        <!-- <a href="#">Settings <i class="ti-settings"></i></a> -->
                                         <a href="logout">Log Out <i class="ti-shift-left"></i></a>
                                     </div>
                                 </div>
@@ -130,7 +130,7 @@
             </div>
         </div>
 
-        <div class="main_content_iner ">
+        <!-- <div class="main_content_iner ">
             <div class="container-fluid p-0">
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
@@ -190,7 +190,7 @@
                     <?= $this->renderSection('content')?>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="footer_part">
             <div class="container">

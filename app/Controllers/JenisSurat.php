@@ -24,6 +24,7 @@ class JenisSurat extends BaseController{
     }
 
     public function delete($id){
+        // dd($id);
       $result = $this->jenissuratModel->delete($id);
 
       if ($result) {

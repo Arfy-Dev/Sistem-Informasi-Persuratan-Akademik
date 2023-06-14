@@ -20,7 +20,7 @@ class Prodi extends BaseController{
     
     public function index(){
          $data_fakultas = $this->fakultasModel->getAllFakultas();
-        
+         
         $data = [
             'title' => 'Data Program Studi',
             'data_fakultas' => $data_fakultas

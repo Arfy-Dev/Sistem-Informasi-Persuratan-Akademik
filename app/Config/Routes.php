@@ -34,6 +34,7 @@ $routes->get('/', 'Home::index');
 $routes->get('pengajuan', 'Pengajuan::index');
 // $routes->get('/ajukan', 'Pengajuan::create');
 $routes->post('pengajuan/(:segment)', 'Pengajuan::save');
+$routes->get('pengumuman', 'Pengajuan::pengumuman');
 $routes->get('lacak', 'Lacak::index');
 $routes->get('lacak/cari', 'Lacak::cari');
 

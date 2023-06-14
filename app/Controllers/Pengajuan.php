@@ -1,19 +1,27 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\ProdiModel;
 
 class Pengajuan extends BaseController
 {
     protected $pengajuanModel;
+    protected $prodiModel;
 
     public function __construct(){
         $this->pengajuanModel = new \App\Models\PengajuanModel();    
+        $this->prodiModel = new \App\Models\ProdiModel();    
     }
     
     public function index(){
+        $data_prodi = $this->prodiModel->getAllProdi();
+
         $data = [
-            'title' => 'Pengajuan Surat'
+            'title' => 'Pengajuan Surat',
+            'prodi' => $data_prodi
         ];
+        
+        session()->set('prodi', $data_prodi);
 
         return view('/pengajuan/index', $data);
     }
@@ -104,5 +112,14 @@ class Pengajuan extends BaseController
         ];
 
         return view('/pengajuan/index', $data);
+    }
+
+    public function pengumuman(){
+
+        $data = [
+            'title' => 'Alur Pendaftaran',
+        ];
+        
+        return view('pengumuman', $data);
     }
 }

@@ -35,24 +35,24 @@
                                                     <div class="form-group">
                                                         <label for="kode_surat" class="harus">Kode Surat</label>
                                                         <input id="kode_surat" name="kode_surat" type="text" required
-                                                                class="form-control " autofocus=""
-                                                                aria-describedby=" kode_suratHelp"
-                                                                                                                                data-form-type="other">
+                                                            class="form-control " autofocus=""
+                                                            aria-describedby=" kode_suratHelp" data-form-type="other">
                                                         <div class="invalid-feedback">
                                                             Harap isi ID Kode Surat!
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="jenis_surat" class="harus">Jenis Surat</label>
-                                                        <input id="jenis_surat" required type="text" class="form-control "
-                                                            autofocus="" aria-describedby="jenis_suratHelp" name="jenis_surat"
+                                                        <input id="jenis_surat" required type="text"
+                                                            class="form-control " autofocus=""
+                                                            aria-describedby="jenis_suratHelp" name="jenis_surat"
                                                             onkeydown="return /[A-Z, a-z]/.test(event.key)"
                                                             data-form-type="other">
                                                         <div class="invalid-feedback">
                                                             Harap isi Jenis Surat!
                                                         </div>
                                                     </div>
-                                                    
+
                                                     <button type="submit" class="btn btn-primary ">
                                                         Tambah
                                                     </button>
@@ -96,7 +96,7 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabel">Edit Data
-                                                <?= $result['kode_surat']?></h5>
+                                            </h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
@@ -113,16 +113,15 @@
                                                                 id="form<?= $result['kode_surat']?>"
                                                                 novalidate="novalidate">
                                                                 <div class="form-group">
-                                                                    <input id="kode_surat autorefresh"
-                                                                        name="kode_surat" type="hidden"
-                                                                        class="form-control " autofocus=""
+                                                                    <input id="kode_surat autorefresh" name="kode_surat"
+                                                                        type="hidden" class="form-control " autofocus=""
                                                                         aria-describedby="kode_suratHelp"
                                                                         value="<?= $result['kode_surat']?>"
                                                                         data-form-type="other">
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="kode_surat" class="harus">ID
-                                                                        Fakultas</label>
+                                                                    <label for="kode_surat" class="harus">Kode
+                                                                        Surat</label>
                                                                     <input disabled value="<?= $result['kode_surat']?>"
                                                                         id="
                                                                                 kode_surat" type="text" required
@@ -136,18 +135,20 @@
                                                                         Harap isi Kode Surat!
                                                                     </div>
                                                                 </div>
-                                                                    <div class="form-group">
-                                                                        <label for="jenis_surat" class="harus">Jenis Surat</label>
-                                                                        <input value="<?= $result['jenis_surat']?>" id="jenis_surat"
-                                                                            required type="text" class="form-control "
-                                                                            autofocus="" aria-describedby="jenis_suratHelp"
-                                                                            name="jenis_surat"
-                                                                            onkeydown="return /[A-Z, a-z]/.test(event.key)"
-                                                                            data-form-type="other">
-                                                                        <div class="invalid-feedback">
-                                                                            Harap isi Jenis Surat Anda!
-                                                                        </div>
+                                                                <div class="form-group">
+                                                                    <label for="jenis_surat" class="harus">Jenis
+                                                                        Surat</label>
+                                                                    <input value="<?= $result['jenis_surat']?>"
+                                                                        id="jenis_surat" required type="text"
+                                                                        class="form-control " autofocus=""
+                                                                        aria-describedby="jenis_suratHelp"
+                                                                        name="jenis_surat"
+                                                                        onkeydown="return /[A-Z, a-z]/.test(event.key)"
+                                                                        data-form-type="other">
+                                                                    <div class="invalid-feedback">
+                                                                        Harap isi Jenis Surat Anda!
                                                                     </div>
+                                                                </div>
                                                         </div>
                                                     </div>
                                                     <button type="submit" class="btn btn-primary ">
@@ -160,8 +161,8 @@
                                     </div>
                                 </div>
                             </div>
-                    
-                            <a href="/jenissurat/delete/<?= $result['kode_surat']?>" class="btn btn-danger"
+
+                            <a href="jenissurat/delete/<?= $result['kode_surat']?>" class="btn btn-danger"
                                 style="font-size: 12px; padding: 5px 10px; color:white; border-radius: 3px;"
                                 onclick="sweetAlert(event, '<?= $result['kode_surat']?>')">Hapus</a>
                             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -178,7 +179,7 @@
                                 }).then((result) => {
                                     if (result.isConfirmed) {
                                         // Arahkan pengguna ke halaman delete
-                                        window.location.href = "jenissurat/delete/<?= $result['kode_surat']?>";
+                                        window.location.href = "jenissurat/delete/" + kode_surat;
                                     }
                                 });
                             }
